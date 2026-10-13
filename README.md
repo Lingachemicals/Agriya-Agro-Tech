@@ -21,3 +21,7 @@ Field photograph: Unsplash, https://unsplash.com/photos/1500382017468-9049fed747
 ## Hopewell layout and logo loader
 
 The original Hopewell layout and stylesheet are retained with Agriya-specific content. The supplied animated GIF is used in the loading screen, with a static final frame for the navigation and reduced-motion users. The loader dismisses on load after one animation cycle, with a 3.5 second fallback. The enquiry form downloads a local text draft and does not send a message.
+
+## 2026 brochure content
+
+Company profile, vision, policies, contact details and complete product descriptions are sourced from the supplied 25-page English brochure. The source layout and logo loader are retained. Product detail content is rendered as HTML text, not embedded PDF pages or brochure images. Glucon, Methelo, Asperlin and Beauverilin use detailed-page names with index names retained as search aliases. Brochure potency and dosage are transcribed without silently changing ambiguous source values. The contact form opens an email draft to the brochure email address; it does not automatically send.

@@ -1,162 +1,516 @@
 [
   {
-    "name": "Azolin",
+    "name": "Azolin-LF",
     "technical": "Azospirillum lipoferum",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Azolin"
+    ],
+    "slug": "azolin-lf",
+    "sourcePages": [
+      3
+    ],
+    "content": [
+      "AZOLIN - LF\n(Azospirillum lipoferum)\nAzospirillum is a beneficial nitrogen-fixing\nbacterium used as a biofertilizer to improve\nplant growth and soil health.\nBenefits:\n• Converts atmospheric nitrogen into\nammonia.\n• Reduces the cost of chemical nitrogen\nfertilizers.\n• Produces plant growth hormones like\nauxins, gibberellins, and cytokinins.\n• Improves tolerance to abiotic stress\nand increases soil nitrogen levels.\n• Enhances vegetative growth and\noverall productivity. Improves seed\ngermination.\n• Improves soil microflora and overall\nsoil fertility.",
+      "POTENCY :\nLiquid :1 x 10⁹ CFU / ml\nPowder : 2x10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nFixes atmospheric nitrogen (N₂).\nProduces plant growth-promoting substances\nlike Indole-3-acetic acid (IAA) and\ngibberellins.\nRecommended Crops:\nEspecially useful for non-leguminous crops\nlike paddy, millets, sugarcane, vegetables,\noilseeds, and plantation crops.\nAPPLICATION\nSoil Application\nDrip Irrigation"
+    ]
   },
   {
-    "name": "Azotolin",
+    "name": "Azotolin-LF",
     "technical": "Azotobacter chroococcum",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Azotolin"
+    ],
+    "slug": "azotolin-lf",
+    "sourcePages": [
+      3
+    ],
+    "content": [
+      "AZOTOLIN - LF\n(Azotobacter Chroococcum)\nAzotobacter Chroococcum is a free living\naerobic bacterium by fixing atmospheric\nnitrogen into ammonia in soil.\nBenefits:\n• fixes atmospheric nitrogen into\nammonia supplying it to plant roots.\n• Enhances root proliferation and early\nplant\n• Produces antifungal compounds that\nprotect against plant diseases and act\nas benefical soil conditioner.\n• Produces growth promoting\nsubstances like Auxins, Gibberellins\nand Cytokinins.\n• Reduces the cost of chemical nitrogen\nfertilizer.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 21 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nFixes atmospheric nitrogen,\nsynthesizing phytohormones (IAA,\ngibberellins, cytokinins), enhancing root\ngrowth, solubilizing nutrients, and acting as a\nbiocontrol agent against soil pathogens.\nRecommended Crops:\nWheat, maize, millet, cotton, grapes,\nbanana, organce paddy, vegetables, sorghum,\ntomato, potato, and cabbage.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Acetolin",
+    "name": "Acetolin-LF",
     "technical": "Acetobacter diazotrophicus",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Acetolin"
+    ],
+    "slug": "acetolin-lf",
+    "sourcePages": [
+      4
+    ],
+    "content": [
+      "ACETOLIN - LF\n(Acetobacter diazotrophicus)\nAcetobacter diazotrophicus is an endophytic\nnitrogen-fixing bacterium that lives inside\nplant tissues, particularly in sugar-rich crops.\nBenefits:\n• Fixes atmospheric nitrogen.\n• Colonizes inside plant tissues (root,\nstem, leaves).\n• Produces phytohormones like IAA,\ngibberellins, cytokinins.\n• Improves tolerance to abiotic stress\nand increases soil nitrogen levels.\n• Reduces the cost of chemical fertilizer",
+      "POTENCY :\nLiquid :1 x 10⁹ CFU / ml\nPowder : 2x10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nRecommended Crops:\nSugarcane, Sweet sorghum, Sweet potatoes,\nCoffee, Paddy, Wheat\nAPPLICATION\nSoil Application\nDrip Irrigation"
+    ]
   },
   {
-    "name": "Rhizolin",
+    "name": "Rhizolin-LF",
     "technical": "Rhizobium spp",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Rhizolin"
+    ],
+    "slug": "rhizolin-lf",
+    "sourcePages": [
+      4
+    ],
+    "content": [
+      "RHIZOLIN - LF\n(Rhizobium spp)\nRhizobium is a genus of symbiotic Nitrogen-\nfixing bacteria that forms nodules on the roots\nof leguminous plants. These bacteria live in\nmutual association with their host plant.\nBenefits:\n• Fixes Atmospheric nitrogen inside\nroot nodules and supplies it directly to\nthe plant.\n• Promotes beneficial soil microbial\npopulation.\n• Improves protein content in grains and\npulses.\n• Reduces the cost of chemicals\nnitrogen fertilizer.\n• Boosts roots and shoot growth.\nMode of Action:\nThe Bacteria form nodules in the root",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 2 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nof specific host legumes, where they convert\nnitrogen into usable ammonia for the plant.\nRecommended Crops:\nleguminous crops, like pea, pigeon,\nBlackgram, green gram, chick pea, cow pea,\nSoyabean, peanuts.\nAPPLICATION\nSoil Application\nDrip irrigation\nSeed Treatment"
+    ]
   },
   {
-    "name": "Phospholin",
-    "technical": "Phosphate solubilizing bacteria",
-    "category": "Bio Fertilizers"
+    "name": "Phospholin-LF",
+    "technical": "Phosphate solubilizing bacteria / Bacillus megaterium",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Phospholin"
+    ],
+    "slug": "phospholin-lf",
+    "sourcePages": [
+      5
+    ],
+    "content": [
+      "PHOSPHOLIN - LF\n(Phosphate Solubilizing Bacteria)\nBacillus megaterium is Phosphate\nSolubilizing bacteria that convert insoluble\nSoil phosphorus into available forms for plant\nabsorption.\nBenefits:\n• These Bacteria improve soil health\n• Improves Plant uptake of phosphorus\n• E n h a n c e s P l a n t g r o w t h a n d\nstrengthens root development.\n• Enhances disease resistance\n• Improves nutrient absorption, leading\nto higher productivity and quality of\nproduces.\n• Reduces the cost of chemical\nfertilizer.",
+      "POTENCY :\nLiquid :1 x 10⁹ CFU / ml\nPowder : 2x10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nThese bacteria Secrete organic acid\nand enzymes that solubilize insoluble\nphosphate in the soil.\nRecommended Crops:\nPaddy, Wheat, Cereals, Pulses, Vegetables &\nHorticultural crops.\nAPPLICATION\nSoil Application\nDrip irrigation\nSeed Treatment"
+    ]
   },
   {
-    "name": "Potashlin",
-    "technical": "Potash mobilizing bacteria",
-    "category": "Bio Fertilizers"
+    "name": "Potashlin-LF",
+    "technical": "Frateuria aurantia",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Potashlin"
+    ],
+    "slug": "potashlin-lf",
+    "sourcePages": [
+      5
+    ],
+    "content": [
+      "POTASHLIN - LF\n(Frateuria aurantia)\nFrateuria aurantia is a potash mobilizing\nbiofertilizer that convert insoluble soil\npotassium into a usable form for plant uptake.\nBenefits:\n• It releases immobilized potassium in\nthe soil into an accessible form for\nplant roots.\n• Promotes better root development and\nboosts fruit size, color and yield.\n• Reduces the cost of chemical\npotassium fertilizer.\n• Improves plant resilience to\nenvironmental stresses like drought\nand diseases.\n• Improves seed germination\npercentage and enhances overall\nbiomass.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nFrateuria Aurantia produces organic\nacid (Oxalic acid, Citric acid) Enzymes.\nRecommended Crops:\nPaddy, Wheat, Tea, cabbage, Pea,\nBean, bringal, Chilly, Onion, Potato, Tomato,\nGrapes, Banana, Sugarcane, Vegetable and\nhorticulture crops.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Zincolin",
-    "technical": "Zinc solubilizing bacteria",
-    "category": "Bio Fertilizers"
+    "name": "Zincolin-LF",
+    "technical": "Zinc solubilizer",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Zincolin"
+    ],
+    "slug": "zincolin-lf",
+    "sourcePages": [
+      6
+    ],
+    "content": [
+      "ZINCOLIN-LF\n(Zinc Solubilizer)\nZinc Solubilizing bacteria that convert\ninsoluble zinc compoud into plant - available\nforms through the production of organic acid\n(gluconic acid)\nBenefits:\n• Enhances crop growth and nutrient\nuptake.\n• Promotes plant growth by producing\norganic acid, hormones.\n• Enhances root development.\n• Reduces the cost of chemical fertilizer.\n• Reduces the iron deficiency by\nregulating zinc transport.\n• Increases zinc content in grains and\nfruits.",
+      "POTENCY :\nLiquid : 2 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nZSB Secretes organic acid (glucosin\nacid Ketogluconic acid, oxalic, lactic) that\ncreate a low pH acetic environment, breaking\ndown zinc complexes. Bacteria Produce\nChelating agents (siderophores) that bind to\nzinc cations, increasing their solubility and\nuptake.\nRecommended Crops:\nPaddy, Wheat, Banana, Maize,\nCotton, Vegetables & fruits.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Vamlin",
+    "name": "Vamlin-LF",
     "technical": "Vesicular arbuscular mycorrhiza",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Vamlin"
+    ],
+    "slug": "vamlin-lf",
+    "sourcePages": [
+      6
+    ],
+    "content": [
+      "VAMLIN - LF\n(Vesicular Arbuscular Mycorrhiza)\nVAM is a beneficial Symbiotic fungus that\nattaches to plant roots, signiticanty enhancing\nnutrient uptake especially P, Zn, Fe, Cu, water\nabsorption and stress tolerance.\nBenefits:\n• Enhances uptake of phosphorus,\npotassium and micronutrients (Zn, Fe,\nCu).Promotes deeper root systems,\nfaster growth, and better flowers in\nplants.\n• Helps plants withstand environmental\nstresses like drought, salinity, and\ndiseases.\n• The fungus penetrates root cortical\ncells to form arbuscules for nutrient\nexchange and vesicles for storage of\nnutrients.\n• VAM produces a glue-like protein\ncalled glomalin, which helps\naggregate soil particles, improving\nsoil structure, aeration, and water",
+      "POTENCY :\nPowder : 1200 IP/g.\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\ninfiltration.\n• VAM helps protect plants against soil-\nborne pathogens and nematodes by\nstrengthening the root system.\nMode of Action:\nVAM symbiotically colonizes plant\nroots, where fungal hyphae extend far beyond\nthe nutrient depletion zone to absorb\nimmobile nutrients such as phosphorus, zinc,\niron, manganese, and water directly into plant\ncells.The hyphae create an extensive\nunderground network, increasing root surface\narea, enhancing drought tolerance, nutrient\nuptake against pathogens through a physical\nbarrier, and improving soil health.\nRecommended Crop: For All Crops\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Biolin NPK",
-    "technical": "Nitrogen, phosphorus, potassium",
-    "category": "Bio Fertilizers"
+    "name": "Biolin N.P.K",
+    "technical": "Nitrogen, phosphorus and potassium",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Biolin NPK"
+    ],
+    "slug": "biolin-n-p-k",
+    "sourcePages": [
+      7
+    ],
+    "content": [
+      "BIOLIN – N.P.K\n(Nitrogen, Phosphorus, and Potassium)\nNPK Consortia is an eco-friendly\nbiofertilizer containing nitrogen-fixing,\nphosphorus-solubilizing, and potassium-\nmobilizing bacteria. It enhances nutrient\nuptake.\nBenefits:\n• Provides nitrogen, phosphorus, and\npotassium by one product.\n• Enhances microbial activity, soil\nstructure, and aeration.\n• Promotes stronger root proliferation\nand shoot growth.\n• Promotes root development, faster\nchlorophyll formation, and increased\nplant immunity.\n• Reduces the cost of chemical\nfertilizers.\nMode of Action:\nNPK Consortia act through a synergistic\nmulti-microbial approach to improve nutrient",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\navailability:\n• The nitrogen-fixing bacteria convert\natmospheric nitrogen into plant-usable\nforms.\n• The phosphorus-solubilizing bacteria\ndissolve insoluble phosphates.\n• The potassium-mobilizing bacteria\nrelease fixed potassium from soil\nminerals.\nRecommended Crops:\nPaddy, Wheat, Maize, Groundnut,\nSugarcane, Banana, Grapes, Vegetables,\nChilli, Pea. Coffee, Tea.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Glucolin",
-    "technical": "Gluconacetobacter",
-    "category": "Bio Fertilizers"
+    "name": "Glucon",
+    "technical": "Gluconacetobacter diazotrophicus (Sugarcane)",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Glucolin"
+    ],
+    "slug": "glucon",
+    "sourcePages": [
+      7
+    ],
+    "content": [
+      "GLUCON\n(Sugarcane)\nGluconacetobacter diazotrophicus is a\nbeneficial endophytic bacterium that lives\ninside sugarcane and fixes atmospheric\nnitrogen into ammonia to promote plant\ngrowth.\nBenefits:\n• It provides significant nitrogen to the\nplant, reducing dependence on\nnitrogen fertilizers.\n• Produces phytohormones such as\nauxins, which stimulate root growth\nand shoot growth.\n• Stimulates cell elongation, resulting in\nlonger and thicker sugarcane stems.\n• Increased plant height and internodal\nlength, which directly contributes to\nmore cane growth.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\n• Reduces the cost of chemical nitrogen\nfertilizers.\nMode of Action:\nGluconacetobacter diazotrophicus\nfixes atmospheric nitrogen into ammonia\nusing the enzyme nitrogenase, providing a\ndirect nitrogen source to the plant.\nRecommended Crops:\nSugarcane, Sweet sorghum, Sweet potato,\nBeetroot.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Methylin (PPFM)",
+    "name": "Methelo (PPFM)",
     "technical": "Methylobacterium extorquens",
-    "category": "Bio Fertilizers"
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Methylin (PPFM)",
+      "Methylo (PPFM)",
+      "Methelo"
+    ],
+    "slug": "methelo-ppfm",
+    "sourcePages": [
+      8
+    ],
+    "content": [
+      "METHELO (PPFM)\n(methylobacterium Extorquens)\nMethylobacterium extorquens (Pink\nPigmented Facultative Methylotroph -\nPPFM) is a beneficial bacterium associated\nwith plant growth promotion. It colonizes\nplant surfaces and forms mutualistic\nassociations that aid in nutrient utilization\nand stress tolerance.\nBenefits:\n• Helps plants withstand abiotic\nstresses such as drought, high salinity,\nand heat by modulating ethylene\nlevels through ACC deaminase\nactivity.\n• Improves plant growth by utilizing\nmethanol emitted from plants.\n• Increases crop yield and improves\nfruit quality.",
+      "POTENCY :\nLiquid : 2 × 10⁸ / ml\nDosage :\nLiquid : 500ml - 1000 ml / Acre.\n• Produces plant growth regulators like\nauxins, cytokinins, and gibberellins.\n• Improves seed germination, root\ndevelopment, and accelerates\nvegetative growth.\nMode of Action:\nMethylobacterium extorquens\ncolonizes the phyllosphere (leaf surface) and\nutilizes methanol released by plants. It\nproduces growth-promoting substances and\nACC deaminase, which helps reduce stress-\ninduced ethylene levels, enhancing plant\ngrowth and development.\nAPPLICATION\nRecommended Crops:\nFoliar Spray\nPaddy, Wheat, Vegetables,\nBanana."
+    ]
   },
   {
-    "name": "Asperin",
-    "technical": "Aspergillus spp",
-    "category": "Bio Fertilizers"
+    "name": "Asperlin",
+    "technical": "Aspergillus spp / A natural bio-fermentation product",
+    "category": "Bio Fertilizers",
+    "aliases": [
+      "Asperin"
+    ],
+    "slug": "asperlin",
+    "sourcePages": [
+      8
+    ],
+    "content": [
+      "ASPERLIN\n(A natural bio-fermentation product)\nAspergillus sp. is highly effective at breaking\ndown unavailable phosphorus, potassium and\nzinc in the soil and converting them into\nsoluble forms for plant uptake.\nBenefits:\n• Increases the solubility of phosphorus,\npotassium and zinc.\n• Produces plant growth hormones like\nIAA and gibberellins, enhancing root\ndevelopment.\n• These fungi secrete proteolytic\nenzymes such as cellulase and\namylase, which accelerate the\ndecomposition of agricultural\nresidues.\n• Improves the photosynthetic capacity\nof plants.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nRecommended Crops:\nPaddy, Vegetables, Banana,\nSugarcane, Potato, Sorghum, Groundnut\nMaize, etc.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Sudolin",
+    "name": "Sudolin-LF",
     "technical": "Pseudomonas fluorescens",
-    "category": "Bio Control Agents"
+    "category": "Bio Control Agents",
+    "aliases": [
+      "Sudolin"
+    ],
+    "slug": "sudolin-lf",
+    "sourcePages": [
+      9
+    ],
+    "content": [
+      "SUDOLIN-LF\n(Pseudomonas fluorescens)\nPseudomonas fluorescens is a highly\neffective eco-friendly bacterial biopesticide\nand bio-fungicide used to control soil-borne\nand foliar diseases including root rot, wilt\nand damping-off.\nBenefits:\n• Protects crops from soil-borne diseases\nsuch as:\n• Fusarium, Pythium, Rhizoctonia\nAnthracnose\n• Produces antibiotics and siderophores\nthat directly inhibit fungal and bacterial\npathogens.\nEnhances:\n• Root growth and root development.\n• Nutrient uptake.\n• Plant immunity.\n• Efficient colonization of the rhizosphere,",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nthereby outcompeting harmful microbes.\nMode of Action:\nIt acts through mechanisms such as\nproducing antibiotics, siderophores and\nhydrogen cyanide, while also triggering\ninduced systemic resistance in crops.\nTarget Pathogens and Diseases:\nSoil-borne diseases, Fusarium (wilt),\nPythium (root rot), Rhizoctonia (sheath\nblight), Sclerotium (stem rot), Root-knot\nnematodes.\nRecommended Crops:\nFor all Crops\nAPPLICATION\nSoil Application\nDrip irrigation\nSeed Treatment\nFoliar Spray"
+    ]
   },
   {
-    "name": "Tricholin",
+    "name": "Tricholin-LF",
     "technical": "Trichoderma viride",
-    "category": "Bio Control Agents"
+    "category": "Bio Control Agents",
+    "aliases": [
+      "Tricholin"
+    ],
+    "slug": "tricholin-lf",
+    "sourcePages": [
+      9
+    ],
+    "content": [
+      "TRICHOLIN-LF\n(Trichoderma viride)\nTrichoderma viride is a beneficial, eco-\nfriendly fungus used as a bio-fungicide to\ncontrol soil-borne and seed-borne diseases.\nBenefits:\n• Enhances plant immunity.\n• Promotes root growth and improves soil\nhealth.\n• Solubilizes available phosphate and\nimproves nutrient uptake.\n• Improves seed germination.\nMode of Action:\nTrichoderma viride colonizes and penetrates\nfungal pathogens and feeds on them. This\nprocess is called mycoparasitism.The fungus\nsecretes hydrolytic enzymes and secondary\nmetabolites, including chitinases and\ncellulases, which break down pathogen cell\nwalls and inhibit their growth.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 2 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nTarget Diseases :\nRhizoctonia, Pythium, Fusarium,\nSclerotinia, Sclerotium.\nRecommended Crops :\nFor All Crops.\nAPPLICATION\nSoil Application\nDrip irrigation\nSeed Treatment"
+    ]
   },
   {
-    "name": "Bacilin",
+    "name": "Bacilin-LF",
     "technical": "Bacillus subtilis",
-    "category": "Bio Control Agents"
+    "category": "Bio Control Agents",
+    "aliases": [
+      "Bacilin"
+    ],
+    "slug": "bacilin-lf",
+    "sourcePages": [
+      10
+    ],
+    "content": [
+      "BACILIN-LF\n(Bacillus Subtilis)\nBacillus subtilis is a highly effective, eco-\nfriendly biofungicide and bactericide that\npromotes plant growth through rhizobacteria.\nIt is useful for controlling soil-borne and\nfoliar diseases.\nBenefits:\n• Protects plants from bacterial and\nfungal pathogens.\n• Produces antibiotics and enzymes that\nsuppress harmful microbes.\n• Promotes stronger root systems.\n• Enhances nutrient solubilization.\n• Induces systemic resistance against\nbiotic (pathogens) and abiotic stress\n(drought, salinity).\n• Heat-resistant spores make it effective\nfor field application.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nProduces bioactive compounds,\nlipopeptides, and cell-wall degrading\nenzymes that suppress harmful bacteria and\nfungi.\nTarget Diseases:\nAnthracnose, Leaf spots, Fusarium\nwilt, Pythium, Rhizoctonia, Botrytis.\nRecommended Crops:\nAll Crops.\nAPPLICATION\nSoil Application\nDrip irrigation\nFoliar Spray"
+    ]
   },
   {
-    "name": "Actinolin",
+    "name": "Actinolin-LF",
     "technical": "Streptomyces lydicus",
-    "category": "Bio Control Agents"
+    "category": "Bio Control Agents",
+    "aliases": [
+      "Actinolin"
+    ],
+    "slug": "actinolin-lf",
+    "sourcePages": [
+      10
+    ],
+    "content": [
+      "ACTINOLIN-LF\n(Streptomyces lydicus)\nStreptomyces lydicus is a beneficial soil-\ndwelling bacterium used as a broad-\nspectrum biofungicide to control powdery\nmildew and root rot diseases.\nBenefits:\n• Colonizes root tips and produces\nenzymes and antibiotics that suppress\npathogens.\n• Effectively controls powdery mildew.\n• Controls a wide range of soil-borne\nfungal and bacterial pathogens.\n• Enhances root growth and root health.\nMode of Action:\nThe bacterium produces hyphae that\ngrow around root tips, acting as a protective\nbarrier. It also produces antifungal\nmetabolites and enzymes that degrade fungal\ncell walls.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nTarget Diseases:\nPowdery mildew, B o t r y t i s ,\nSclerotinia, Fusarium, Rhizoctonia,\nPythium, Phytophthora.\nRecommended Crops:\nAll Crops.\nAPPLICATION\nSoil Application\nDrip irrigation\nFoliar Spray"
+    ]
   },
   {
-    "name": "Vertilin",
+    "name": "Vertilin-LF",
     "technical": "Verticillium lecanii",
-    "category": "Bio Pesticides"
+    "category": "Bio Pesticides",
+    "aliases": [
+      "Vertilin"
+    ],
+    "slug": "vertilin-lf",
+    "sourcePages": [
+      11
+    ],
+    "content": [
+      "VERTILIN-LF\n(Verticillium lecanii)\nVerticillium lecanii is an eco-friendly\nentomopathogenic fungal bio-pesticide used\nto control soft-bodied sucking pests like\nwhiteflies, aphids, thrips, mealybugs, and\nscale insects.\nBenefits:\n• Effectively controls sucking pests like\naphids, whiteflies, thrips, mites, and\nmealybugs.\n• Safe for beneficial insects and\nhumans.\n• Eco-friendly and biodegradable.\n• Alternative to chemical insecticides.\nMode of Action:\nThe fungal spores adhere to the insect\ncuticle.Germinate and penetrate the",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\ninsect.Release toxins that cause death.\nTarget Pests:\nSoft-bodied sucking pests : Aphids,\nWhiteflies, Thrips, Mites, Mealybugs.\nRecommended Crops:\nGreenhouse crops, Tomato, Potato,\nBrinjal, Banana, Onion, Mango, etc.\nAPPLICATION\nFoliar Spray\nDrip irrigation"
+    ]
   },
   {
-    "name": "Nematolin",
+    "name": "Nematolin-LF",
     "technical": "Paecilomyces lilacinus",
-    "category": "Bio Pesticides"
+    "category": "Bio Pesticides",
+    "aliases": [
+      "Nematolin"
+    ],
+    "slug": "nematolin-lf",
+    "sourcePages": [
+      12
+    ],
+    "content": [
+      "NEMATOLIN-LF\n(Paecilomyces lilacinus)\nPaecilomyces lilacinus is an eco-friendly bio-\nnematicide used to control plant-parasitic\nnematodes such as root-knot, cyst, reniform,\nand burrowing nematodes.\nBenefits:\n• Effective against root-knot, cyst,\nreniform, citrus, and burrowing\nnematodes.\n• High humidity and low temperatures\nenhance efficiency.\n• Safe for humans, animals, and\nbeneficial microbes.\n• Reduces chemical nematicide use.\n• Produces phytohormones that\npromote root growth and reduce\nabiotic stress.\nMode of Action:\nPaecilomyces lilacinus attacks\nnematodes by growing hyphae over the",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nnematode egg surface.Produces enzymes that\nbreak the egg.Feeds on the inner contents and\nkills the nematode.\nTarget Pests:\nPlant-parasitic nematodes such as:\nRoot-knot nematodes, Cyst nematodes,\nReniform nematodes, Burrowing nematodes.\nRecommended Crops:\nAll Crops.\nAPPLICATION\nSoil Application\nDrip irrigation"
+    ]
   },
   {
-    "name": "Metalin",
+    "name": "Metalin-LF",
     "technical": "Metarhizium anisopliae",
-    "category": "Bio Pesticides"
+    "category": "Bio Pesticides",
+    "aliases": [
+      "Metalin"
+    ],
+    "slug": "metalin-lf",
+    "sourcePages": [
+      12
+    ],
+    "content": [
+      "METALIN-LF\n(Metarhizium anisopliae)\nM e t a r h i z i u m a n i s o p l i a e i s a n\nentomopathogenic fungus used as a bio-\ninsecticide to control pests such as root grubs,\ntermites, beetles, and borers.\nBenefits:\n• Biological insecticide that infects and\nkills various soil-dwelling and foliar\npests, including root grubs, termites,\nwhite grubs, root weevils, and borers.\n• Safe for beneficial predators and\npollinators.\n• Reduces the use of chemical\ninsecticides.\n• Controls root-damaging pests.\n• Improves overall crop health and\nyield.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nMode of Action:\nSpores come into contact with the\npest. Penetrate the cuticle (outer body\ncovering). Grow internally within the insect.\nCause infection and death.\nTarget Pests:\nRoot grubs, Termites, Beetles, Leaf\nhoppers, Borers, Various larvae.\nRecommended Crops:\nAll Crops.\nAPPLICATION\nSoil Application\nDrip irrigation\nFoliar Spray"
+    ]
   },
   {
-    "name": "Beauverlin",
+    "name": "Beauverilin-LF",
     "technical": "Beauveria bassiana",
-    "category": "Bio Pesticides"
+    "category": "Bio Pesticides",
+    "aliases": [
+      "Beauverlin"
+    ],
+    "slug": "beauverilin-lf",
+    "sourcePages": [
+      11
+    ],
+    "content": [
+      "BEAUVERILIN-LF\n(Beauveria bassiana)\nB e a u v e r i a b a s s i a n a i s a n a t u r a l\nentomopathogenic fungus used as a bio-\ninsecticide against a wide range of\nagricultural pests, including caterpillars,\nwhiteflies, aphids, thrips, mealybugs, beetles,\nand weevils.\nBenefits:\n• Highly effective against caterpillars,\naphids, whiteflies, thrips, mealybugs,\nbeetles, and weevils.\n• High humidity and optimum\ntemperatures enhance efficiency.\n• Safe for humans, animals, and\nbeneficial insects.\n• Reduces chemical insecticide use.\nMode of Action:\nSpores attach to the insect.\nGerminate and penetrate the exoskeleton.\nSpread toxins and feed on internal nutrients.\nThe fungus emerges from the dead insect,\nproducing new spores.",
+      "POTENCY :\nLiquid : 1 × 10⁹ / ml\nPowder : 1 × 10⁸ CFU/g\nDosage :\nLiquid : 500ml - 1000 ml / Acre\nPowder : 3-5 Kgs / Acre\nTarget Pests:\nCaterpillars, Beetles, Weevils,\nAphids, Whiteflies, Thrips, Mealybugs.\nRecommended Crops:\nTomato, Potato, Brinjal, Banana,\nMango, Maize, Vegetable , Horticulture\nCrops.\nAPPLICATION\nFoliar Spray\nDrip irrigation"
+    ]
   },
   {
     "name": "Bio Composter",
     "technical": "Combination of compost microorganisms",
-    "category": "Microbial Composter"
+    "category": "Microbial Composter",
+    "aliases": [
+      "Bio Composter"
+    ],
+    "slug": "bio-composter",
+    "sourcePages": [
+      13
+    ],
+    "content": [
+      "BIO COMPOSTER\n(Combination of Compost Microorganisms)\n• Benefits :\n• Decomposition using Bio composter is an odourless\nprocess.\n• It quickens the process of decomposition of the\ncompost.\n• ĉe compost is completely decomposed when Bio\ncomposter is used.\n• It is effective under various environmental\nconditions.\n• It contains high quality final product which is an\nexcellent soil conditioner.\n• It lowers risk of pollution by chemical fertilizers.\nMode of Action:\nCompost microorganisms consist of\nbeneficial bacteria, fungi, and actinomycetes that\nactively decompose organic residues during the\ncomposting process. These microbes secrete enzymes\nthat break down complex organic materials such as\ncrop residues, animal waste, and plant biomass into",
+      "POTENCY :\nLiquid : 1 × 10⁸ / ml\nDosage :\nLiquid : 1Ltr 1000 Kgs of compost.\nsimpler, stable organic matter. During decomposition,\nthey convert nutrients into plant-available forms,\nimprove the carbon–nitrogen balance, and suppress\nharmful pathogens through competitive activity. The\ncontinuous action of compost microorganisms\naccelerates compost maturity, enhances humus\nformation, improves soil structure, increases microbial\ndiversity, and ultimately enriches soil fertility,\nsupporting healthy plant growth and sustainable\nagriculture.\nDirections for use :\nMix 1 Litre of Bio Composter in 200 Litres of water\nper 1000 kgs of Compost.\n• Spray once in 15 days for 3 times"
+    ]
   },
   {
     "name": "Sep Clean",
-    "technical": "A biological odour & sludge remover",
-    "category": "Microbial Composter"
+    "technical": "A biological odour and sludge remover",
+    "category": "Microbial Composter",
+    "aliases": [
+      "Sep Clean"
+    ],
+    "slug": "sep-clean",
+    "sourcePages": [
+      13
+    ],
+    "content": [
+      "SEP CLEAN\n(A Biological Odour and Sludge Remover)\nBenefits:\n• Sep Clean is a mixture of liquefied good\nmicrobes and fungi.\n• It is highly effective becuase it contains a\nrange of microbial applicants.\n• It reduces the output flow of the excrement\nfrom the pit.\nMode of Action:\nO d o u r a n d s l u d g e r e m o v e r\nformulations contain selected beneficial\nmicroorganisms and enzymes that\nbiologically degrade organic waste.\nThese microbes break down accumulated\nsludge, grease, fats, proteins, and other\norganic matter into simpler compounds such\nas water, carbon dioxide, and non-offensive\nby-products.\nDuring this process, the microorganisms\nsuppress odour-causing bacteria by\noutcompeting them for nutrients and",
+      "POTENCY :\nLiquid : 1 x 10⁸ / ml\noxygen, thereby reducing the formation of\nfoul-smelling gases like hydrogen sulfide\nand ammonia.\nContinuous microbial activity minimizes\nsludge buildup, controls bad odours,\nimproves waste degradation efficiency, and\nhelps maintain a cleaner and healthier\nenvironment in drains, septic tanks, effluent\ntreatment plants, and waste handling\nsystems.\n• Directions for use :\n• Mix 500 ml of sep clean in 5 ltrs of\nwater and flush down in to the toilet.\nUse sep clean once in 6 months.\n• The similar process to be followed\nmonthly to keep the septic tanks free of\ntroubles.\n• 500 ml Sep clean is adequate for septic\ntanks of 5000 Its capacity."
+    ]
   },
   {
     "name": "Safe 3",
-    "technical": "Bacterial, fungal & viral controller",
-    "category": "Special Products"
+    "technical": "Bacterial, fungal and viral controller",
+    "category": "Special Products",
+    "aliases": [
+      "Safe 3"
+    ],
+    "slug": "safe-3",
+    "sourcePages": [
+      14
+    ],
+    "content": [
+      "SAFE 3\n(Bacterial, Fungal, And Viral Controller)\n• Benefits :\n• Safe 3 saves the crop from bacterial, fungal,\nand viral infections.\n• It is fabricated from the remains of plant-\nbased raw materials.\n• It destroys the bacteria, fungi, and viruses\npresent in the tissues of the plants and leads\nto the healthy growth of the plants.\n• A part from destroying plant diseases, it\nenhances the flow of plant hormones and\nimproves the photosynthesis process.\n• Using the safe 3 makes the crops grow to\nunimaginable Levels and aids towards better\nharvest.",
+      "Dosage :\nLiquid : 250ml - 500ml per Acre\nMode of Action:\nSave the crop from bacterial, fungal,\nand viral infections.\nRecommended Crops : For All Crops.\nAPPLICATION\nFoliar Spray"
+    ]
   },
   {
     "name": "Trisul",
     "technical": "Plant growth enhancer",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Trisul"
+    ],
+    "slug": "trisul",
+    "sourcePages": [
+      14
+    ],
+    "content": [
+      "TRISUL\n(Plant Growth Enhancer)\nBenefits:\n• It stimulates the plant growth in the crops.\n• It enhances the aeration of the soil.\n• It enhances the generation of anti-oxidants\nin the crops and leads to better root growth.\n• It increases the water content in the leaves\nand maintains the health of the crops under\nextreme conditions.\n• It gives the necessary macro-nutrients and\nmicro-nutrients present in the soil to the\ncrops.\n• It saves the crops from droughts and\ndiseases. It aids the crops to yield the best\nquality in the harvest.\n• Recommended Crops :\nFor All Crops.",
+      "Dosage :\nLiquid : A mixture of 5 ml of Trisul and 1Ltr\nof water is sprinkled on the crops.\nFor drip irrigation 11 or 21 ml of the mixture\nis used for 1 acre of land.\nAPPLICATION\nFoliar Spray\nDrip irrigation"
+    ]
   },
   {
-    "name": "Bio Cal",
+    "name": "Bio-Cal",
     "technical": "Calcium booster",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Bio Cal"
+    ],
+    "slug": "bio-cal",
+    "sourcePages": [
+      15
+    ],
+    "content": [
+      "BIO-CAL\n(Calcium Booster)\n• Benefits :\n• Increases Calcium content in the plant. It can\nbe applied during the flowering stage.\n• Stimulates the internal chemical pathway of\nthe plant.\n• Strengthens the cell wall of the plants.\n• Increases the resistance to pests and\ndiseases.\n• Better development of plant tissues.\n• Activates enzymes and increases cellular\nactivities.\n• Provides calcium for healthy root\ndevelopment.\n• Enhances nutrient absorption in the plants.",
+      "Dosage :\nLiquid : 250ml - 500ml per Acre\n• Increases fruit and vegetable yield evels and\naids towards better harvest.\nRecommended Crops :\nGrains, Pulses, Cotton, Oilseeds, Vegetables,\nFruits, Sugarcane, etc."
+    ]
   },
   {
     "name": "VAM",
     "technical": "Vesicular arbuscular mycorrhiza",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "VAM"
+    ],
+    "slug": "vam",
+    "sourcePages": [
+      15
+    ],
+    "content": [
+      "VAM\n(Vesicular Arbuscular Mycorrhiza)\nBenefits:\n• VAM is an eco-friendly bio\nfertilizer. It consists of\nEctomycorrhiza and\nEndomycorrhiza.\n• VAM plays a great role in inducing\nplant growth by facilitating the\nuptake of essential minerals and\nnutrients from the soil.\n• VAM are symbiotic endophytic\nsoil fungi.\n• VAM fungi produce hyphae,\nwhich are microscopic tubes that\ncolonize crop roots and grow into\nthe soil farther than the root hairs.\n• Nutrients are taken up by the hyphae and carried\nback to the plant.\n• VAM inoculation enhances water absorption and\nstorage in plants.\n• ĉis movement of water to the plants enhances their\nability to survive drought situations.",
+      "Dosage :\nSeed Treatment : 500 Gms per acre.\nSeedling Root Tip : 1 kg per acre.\nSoil Application :5 kg per acre.\n• VAM produce specific antibiotics which immobilize\nand kill soil-borne pathogens.\n• VAM inoculation reduces chemical fertilizer\napplication by 40–50% from the recommended\ndose.\nRecommended Crops :\nSilviculture trees (Timber, Pulp wood and fuel). Fruit\nTrees, Vegetables and Nurseries, Plantation crops\n(Coffee, Arecanut, Banana, Potato, Cotton and Tobacco),\nCash Crops (Grape, Sugarcane, Turmeric) and Others\n(Paddy, Groundnut, Gingelly Sunflower etc)."
+    ]
   },
   {
     "name": "Organic Bio Kit",
     "technical": "12 products kit",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Organic Bio Kit"
+    ],
+    "slug": "organic-bio-kit",
+    "sourcePages": [
+      16
+    ],
+    "content": [
+      "Benefits:\nConverts insoluble nutrients to available form. Helps to\nincrease the plant growth, yield and quality. Protects the plants\nagainst pest and disease. Improves soil health. Totally Natural and\nOrganic Environmental Friendly.\nUsage:\n• Soil application\n• Drip irrigation",
+      "Azolin-LF :\nIt is an associative Symbiotic Nitrogen fixing Bacteria, fixes\nNitrogen from Atmosphere.\nPhospholin-LF :\nIt is an effective and virulent Bacteria Convert insoluble\nPhosphate available in soil in to soluble form by producing\nOrganic acids.\nPotassium - LF :\nIt is capable of mobilizing insoluble Potash near the root\nzone in to easily available form.\nVamlin :\nVAM are Symbiotic endophytic soil fungi convert the insoluble\nPhosphorous, Potash, Calcium and Zinc. It helps to retain soil\nmoisture. It also gives resistance to plants against diseases.\nSudolin - LF\nIt is a natural Biofungicide which gives resistance against leaf\nspot, leaf blight, sheath blight, leaf blast and wilt diseases. By\nSeed dressing, we can improve Seed germination also.\nTricholin - LF\nIt is a bio fungicide, which protects the Root zone of the plants\nagainst Wilt, Rhizome rot and Root rot diseases. It is also used\nas seed dressing to control all type of soil-borne diseases.",
+      "Bacilin - LF\nIt gives complete protection against soil borne diseases. It\nalso works effectively in higher soil temperature.\nMetalin - LF :\nIt is a Entomopathogenic fungi used against Leaf roller, Boll\nWarm, Stem borers, Shoot borer, fruit borer, Pod borers and\nother insects.\nNematolin - LF :\nIt is a Bio-nematicite used for the management of\nnematodes. It infects Eggs, Juveniles and adult female\nnematodes.\nHuminol Gold\nIt contains Humic, Pulvic and ulmic organic acids, which act\nas plant growth regulator. It improves soil Micropes in soil. It\nalso helps plants to attain excellent growth and development.\nTrisul\nIt is a natural Biofungicide which gives resistance against leaf\nspot, leaf blight, sheath blight, leaf blast and wilt diseases. By\nSeed dressing, we can improve Seed germination also.\nMicrozyme M55\nIt induces the plants to secrete more anti-oxidants. It develops\nroot growth and helps to absorb Macro and Micro Nutrients\nfrom soil. It also gives resistance to plants against drought and\ndiseases.",
+      "Recommendation\n• Short duration crops per acre : 250 ml Bottles X 12 Types\n• Medium duration crops per acre : 500 ml Bottles X 12 Types\n• Long duration crops per acre : 1 Litre Bottles X 12 Types"
+    ]
   },
   {
     "name": "Kavash Kit",
     "technical": "Curative preventive immune booster",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Kavash Kit"
+    ],
+    "slug": "kavash-kit",
+    "sourcePages": [
+      17
+    ],
+    "content": [
+      "Bacilin - LF\nIt gives complete protection against soil borne diseases. It also works effectively in higher soil temperature.\nBio Lichen - LF\nBio lichen - can produce a large number of plant endogenous enzymes in the Metabolic Process. Bio lichen - which can significantly improves the\nmutual co-oradination and absorption rate of beneficial factors such as nitrogen, phosphorus, potassium and trace elements. Bio lichen - lives in\nvarious conditions such as high pH and high temperature, specifically aiding to improve nitrogen efficiency in the plant. Bio lichen - produces\nenzymes and PGPR acts as effective bio control agent through the production of various hydrolytic enzymes that effect the growth of soil\npathogens.\nAmylolin - LF\nAmylolin- is commercially used as biocontrol bacterium being especially efficient against soil, fungal and bacterial pathogens\n(Rhizoctonia solani, fusarium wilt). Amylolin - which are living in the vicinity of plant roots and supporting plant growth promoting\nrhizobacteria (PGPR). Amylolin-produces the antimicrobial, antiviral and nematicidal compound which are inducing systemic\nresistance. Amylolin - enhances plant growth promoting activity is linked with their ability to suppress soil-borne plant pathogens.\nSudolin - LF\nIt is a natural Biofungicide which gives resistance against leaf spot, leaf blight, sheath blight, leaf blast and wilt diseases. By\nSeed dressing, we can improve Seed germination also.\nNematolin - LF\nIt is a Bio-nematicite used for the management of nematodes. It infects Eggs, Juveniles and adult female nematodes.\nSafe 3\nIt has antibacterial, antifungal and antiviral activities against several plant pathogens. It is proposed worldwide to replace chemicals in\nuse to control plant diseases. Its derivatives hold great potential as environmental friendly antifungal, antibacterial and antiviral\nagent. It leads for novel antifungal drugs. Its different mechanism of action indicates that the cell membrane is major target for these\ncompounds. It is 100% natural, hence safe to environment.\nMicrozyme M55\nIt induces the plants to secrete more anti-oxidants. It develops root growth and helps to absorb Macro and Micro Nutrients\nfrom soil. It also gives resistance to plants against drought and diseases."
+    ]
   },
   {
     "name": "Suraksha +",
-    "technical": "G4 products",
-    "category": "Special Products"
+    "technical": "G4 products: Safe 3, Sudolin-LF, Beauverilin-LF and Biolin N.P.K",
+    "category": "Special Products",
+    "aliases": [
+      "Suraksha +"
+    ],
+    "slug": "suraksha",
+    "sourcePages": [
+      18
+    ],
+    "content": [
+      "SURAKSHA +\nDosage:\nAdd 250 ml of BIOLIN, SUDOLIN, BEAUVERILIN and 100\nml SAFE-3 in 50 ltrs of water and spray in morning or evening\nhours\nSafe 3\nBenefits:\nIt has antibacterial, antifungal and antiviral activities against several plant pathogens. It is proposed worldwide to\nreplace chemicals in use to control plant diseases. Its derivatives hold great potential as environmental friendly antifungal,\nantibacterial and antiviral agent. It leads for novel antifungal drugs. Its different mechanism of action indicates that the cell\nmembrane is major target for these compounds. It is 100% natural, hence safe to environment.\nSudolin - LF\nBenefits:\nControls diseases like Root Rot, Rhizome Rot, Wilt, Red Rot, Stem Rot, Damping off, Blight, Blasts, Leaf spot, etc. It is a\ncommon gram-negative, rod shaped bacteria. Protects crops from a number of soil borne and seed borne plant pathogens by\nreleasing secondary metabolites. Induces resistance in plants against pathogens. Helps in Controlling Pathogenic nematodes\npresent in soil. Improves plant tolerance to various stresses including climate changes.\nBeauverilin - LF\nBenefits:\nBeauverilin is used for the control of Helicoverpa, Spodoptera, Plutella, White flies, Aphids, Hoppers, ĉrips, Jassids,\nLeaf miners, Bugs, Grubs, Borers and many other lepidoterans, sucking insects and mites. ĉe fungal spore enters the egg shell,\ncuticle, tarsi, mouth parts, anus etc, and inhibits chitin formation through the action of chitinase enzymes released by the fungus.\nĉus causing epizootic diseases among many lepidopterans, sucking insects and mites. Contact action is more pronounced and\nplaying an important role in controlling insects and mites.\nBiolin N.P.K\nBenefits:\nBiolin fixes Atomospheric Nitrogen. Biolin helps to convert insoluble Phosphate into simple and soluble form. Biolin capable\nof mobilizing available Potash into the root system of the plants. Biolin increases plant growth and crop yield. Biolin stimulates\nformation of fats, convertible starches and seeds healthy. Biolin reduces the cost of inorganic fertilizers up to 50-60% Biolin improves\nquality, size of fruits and vegetables. Biolin improves soil health and fertility."
+    ]
   },
   {
-    "name": "Tricon & Tricon L",
+    "name": "Tricon & Tricon-L",
     "technical": "Triacontanol 0.1% EW & 0.5 GR",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Tricon & Tricon L"
+    ],
+    "slug": "tricon-tricon-l",
+    "sourcePages": [
+      19
+    ],
+    "content": [
+      "TRICON\nTRICON-L\nTRICON-L is a Triacontanol-based plant growth regulator for foliar application to improve crop yield.\nModes of Action:\n1.Improves permeability of cell wall.\n2. Triggers Photosynthetic activity by retention of carbon dioxide in cells.\n3.Increases enzymatic activity and anti-\noxidant compounds.\nBenefits:\n• Promotes chlorophyll synthesis,\nimparting green colour to plant.\n• Enhances photosynthesis and\nabsorption of nutrients.\n• Absorption and translocation of more\nnutrients and solutes by cell walls.\n• Improves branching and increases\nleaf area.\n• Leads to more starch production,\nincreases plant mass, giving high\nyield.\n• Increases in quantitative and\nqualitative produce.\nRecommendations:\nTRICON- L Plant Growth Regulator is\nrecommended to increase the yield of\ncrops like Cotton, Chillies, Paddy,\nTomatoes and Groundnuts, Vegetable crops, flower crops and etc.\nDosage: 1.5 to 2.5 ml/litre of water. 250 ml /acre."
+    ]
   },
   {
     "name": "Spinner",
     "technical": "Spirulina 10% (Liquid)",
-    "category": "Special Products"
+    "category": "Special Products",
+    "aliases": [
+      "Spinner"
+    ],
+    "slug": "spinner",
+    "sourcePages": [
+      20
+    ],
+    "content": [
+      "Spinner\nSpirulina 10% (Liquid)\nSPINNER is an advanced natural biotechnology product\nderived from microalgae spirulina extract. It contains highly\nspecialized natural components that promote vigorous growth,\nstimulate flowering, and fruit setting.\nBenefits:\n•It enhances root growth and overall plant vigour.\n•It helps improve chlorophyll content and photosynthesis.\n•It stimulates flowering and grain filling.\n•It increases the quality of the produce.\n•It helps tolerate stress such as drought, salinity and extreme\nheat.\nCrops:\nPaddy, chilli, pulses, groundnut, cardamom, pepper,\ngrapes and all vegetables. Ideally all agriculture and\nhorticultural crops.\nDosage : 2.5 to 5 ml per litre of water.\nFoliar spray in early morning / evening hours for better results.\nDisclaimer : As it is a virgin organic extract, the odour and\ncolour may tend to Vary.",
+      "Spirulina 10% (Liquid) — Specifications\nProtein per cent by weight, minimum: 6\nSpecific gravity: 1.00–1.10\npH (1% aqueous solution): 6.0–9.0\nSolubility (as suspension) per cent, minimum: 80%"
+    ]
   },
   {
     "name": "Agriya Special Kit",
-    "technical": "Azolin, Phospholin, Potashlin, Vamlin, Asperin, Sudolin, Nematolin, Tricholin, Actinolin",
-    "category": "Agriya Special Kit"
+    "technical": "Powder kit: Azolin, Phospholin, Potashlin, Vamlin, Asperlin, Sudolin, Nematolin, Tricholin, Actinolin and Boscor-G",
+    "category": "Agriya Special Kit",
+    "aliases": [
+      "Agriya Special Kit"
+    ],
+    "slug": "agriya-special-kit",
+    "sourcePages": [
+      21,
+      22
+    ],
+    "content": [
+      "AGRIYA SPECIAL KIT\n(Powder)\nAZOLIN\nEnables crops to obtain nitrogen from air through soil. Increases activities of organisms\nin soil and plant growth rapidly. Reduces the cost of chemical fertilizers up to 25%.\nPHOSPHOLIN\nIt helps crops to obtain fully soluble phosphorus. Phospholin increases the growth and\nyield and reduces the cost of chemical fertilizers up to 25%. It also strengthens the soil and\nits microorganisms\nPOTASHLIN\nIt helps to obtain Potassium from soil. Potashlin also increases the growth and yield in\ncrops and strengthens the soil and its Micro-organisms.\nVAMLIN\nVamlin helps roots to uptake phosphorous, potassium and micro nutrients, particularly\ncopper and iron nutrients from soil. It protects crops from soil borne diseases and\nenhances water absorption.\nASPERLIN\nAsperlin contains Aspergillus Oryza protein extract from natural fermentation. It\nconsists of amino acid, cellulose, vitamins, enzymes, and other nutrients in excess. It also\nenables decaying of phosphorous and potassium to deform and to enable the crops to\nuptake easily.",
+      "SUDOLIN\nIt controls crops from soil borne diseases, stem rots, seedling rots, leaf rot, leaf curl, blast,\nwilt etc.\nNEMATOLIN\nNematolin helps to control the worms in the soil. as the worms in the soil tend to\ndecompose the roots. ĉese decomposed roots pave the way for the growth of poisonous\nfungi that contaminate the root vegetables. ĉese vegetables cause various diseases. As\nthe Nematolin destroys the worms and aids in the growth of the crops, we get better yields\nfrom the crops\nTRICHOLIN\nTricolin is an eco-friendly bio control agent. Mycoparasites produce cell wall degrading\nenzymes which allow them to bore holes with other fungus and extract nutrients for their\nown growth. It controls root rot, Rhizome rot, wilt, Red rot, stem rot, Damping off, Blight\nBlasts, leaf spots, etc.\nACTINOLIN\nWhen applied in soil drench, the beneficial bacteria colonize around the plant roots in\nthe rhizosphere to control seedling rot, root rot, leaf curl from a defensive barrier. It\ncontrols seedling rot, root rot, leafspot, powdery mildew, & botrytis. And produces\nseveral byprod ucts to aid in plant health including siderophores, chitinase and anti-\nbiotics. It also Strengthens the soil and its micro organisms.\nBOSCOR - G\nBOSCOR-G is a very safe and eco friendly Bio product. Increases total crop yield. Increases\ngermination and viability of Seeds. Stimulates development of micro flora population in soil.\nImproves speedy translocation of micro and macro Nutrients. Increases the quality of flowers,\nvegetables, fruits, spices and grains. Stimulates root formation, growth and water absorption.\nIncreases colour, taste, weight and flavour of products. Increases the growth rate of plants. Helps\nplants to survive in drought."
+    ]
   }
 ]
