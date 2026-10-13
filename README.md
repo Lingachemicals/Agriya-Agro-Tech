@@ -25,3 +25,5 @@ The original Hopewell layout and stylesheet are retained with Agriya-specific co
 ## 2026 brochure content
 
 Company profile, vision, policies, contact details and complete product descriptions are sourced from the supplied 25-page English brochure. The source layout and logo loader are retained. Product detail content is rendered as HTML text, not embedded PDF pages or brochure images. Glucon, Methelo, Asperlin and Beauverilin use detailed-page names with index names retained as search aliases. Brochure potency and dosage are transcribed without silently changing ambiguous source values. The contact form opens an email draft to the brochure email address; it does not automatically send.
+
+Green crop photograph: raghul ayyasamy / Unsplash, https://unsplash.com/photos/a-large-green-field-AiyBnqG2DCQ. Hero and crop imagery use this lush green paddy photograph.
