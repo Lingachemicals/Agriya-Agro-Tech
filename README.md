@@ -17,3 +17,7 @@ Run `node scripts/build.mjs` to generate `worker.mjs`, then deploy with `npx wra
 The old charity template pages redirect to the agriculture website.
 
 Field photograph: Unsplash, https://unsplash.com/photos/1500382017468-9049fed747ef (image source URL: https://images.unsplash.com/photo-1500382017468-9049fed747ef).
+
+## Hopewell layout and logo loader
+
+The original Hopewell layout and stylesheet are retained with Agriya-specific content. The supplied animated GIF is used in the loading screen, with a static final frame for the navigation and reduced-motion users. The loader dismisses on load after one animation cycle, with a 3.5 second fallback. The enquiry form downloads a local text draft and does not send a message.
