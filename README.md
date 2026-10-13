@@ -1,26 +1,19 @@
-# Hopewell - Free Bootstrap 5 & HTML5 Charity Website Template
+# Agriya Agro Tech
 
-#### Preview
+Agriculture inputs manufacturing company website.
 
- - [Demo](https://themewagon.github.io/hopewell/)
+Live site: https://agriya-agro-tech.lingachem-agriya.workers.dev/
 
-#### Download
- - [Download from ThemeWagon](https://themewagon.com/themes/hopewell/)
+The product names and technical descriptions are transcribed from the supplied product index, available at `site/product-range.png`. Product photos, pack sizes, dosage, certifications, manufacturing capacity and contact details are not supplied and are not invented. The contact section provides product information and the downloadable index; no submission endpoint is configured.
 
-## Getting Started
+## Local preview
 
-1. Clone Repository
-```
-git clone https://github.com/themewagon/hopewell.git
-```
+Run `python3 -m http.server 8080` from this directory.
 
-## Author 
-```
-Design and code is completely written by K29Solutions and development team. 
-```
+## Build and deploy
 
-## License
+Run `node scripts/build.mjs` to generate `worker.mjs`, then deploy with `npx wrangler deploy`. The build packages the HTML, CSS, JavaScript, product data and supplied index in the Worker. The site uses no external runtime dependencies.
 
- - Design and Code is Copyright &copy; <a href="https://www.templatemonster.com/authors/k29solutions/" target="_blank">K29Solutions</a>
- - Licensed cover under [MIT]
- - Distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+The old charity template pages redirect to the agriculture website.
+
+Field photograph: Unsplash, https://unsplash.com/photos/1500382017468-9049fed747ef (image source URL: https://images.unsplash.com/photo-1500382017468-9049fed747ef).

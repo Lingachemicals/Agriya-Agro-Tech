@@ -1,0 +1,162 @@
+[
+  {
+    "name": "Azolin",
+    "technical": "Azospirillum lipoferum",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Azotolin",
+    "technical": "Azotobacter chroococcum",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Acetolin",
+    "technical": "Acetobacter diazotrophicus",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Rhizolin",
+    "technical": "Rhizobium spp",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Phospholin",
+    "technical": "Phosphate solubilizing bacteria",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Potashlin",
+    "technical": "Potash mobilizing bacteria",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Zincolin",
+    "technical": "Zinc solubilizing bacteria",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Vamlin",
+    "technical": "Vesicular arbuscular mycorrhiza",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Biolin NPK",
+    "technical": "Nitrogen, phosphorus, potassium",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Glucolin",
+    "technical": "Gluconacetobacter",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Methylin (PPFM)",
+    "technical": "Methylobacterium extorquens",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Asperin",
+    "technical": "Aspergillus spp",
+    "category": "Bio Fertilizers"
+  },
+  {
+    "name": "Sudolin",
+    "technical": "Pseudomonas fluorescens",
+    "category": "Bio Control Agents"
+  },
+  {
+    "name": "Tricholin",
+    "technical": "Trichoderma viride",
+    "category": "Bio Control Agents"
+  },
+  {
+    "name": "Bacilin",
+    "technical": "Bacillus subtilis",
+    "category": "Bio Control Agents"
+  },
+  {
+    "name": "Actinolin",
+    "technical": "Streptomyces lydicus",
+    "category": "Bio Control Agents"
+  },
+  {
+    "name": "Vertilin",
+    "technical": "Verticillium lecanii",
+    "category": "Bio Pesticides"
+  },
+  {
+    "name": "Nematolin",
+    "technical": "Paecilomyces lilacinus",
+    "category": "Bio Pesticides"
+  },
+  {
+    "name": "Metalin",
+    "technical": "Metarhizium anisopliae",
+    "category": "Bio Pesticides"
+  },
+  {
+    "name": "Beauverlin",
+    "technical": "Beauveria bassiana",
+    "category": "Bio Pesticides"
+  },
+  {
+    "name": "Bio Composter",
+    "technical": "Combination of compost microorganisms",
+    "category": "Microbial Composter"
+  },
+  {
+    "name": "Sep Clean",
+    "technical": "A biological odour & sludge remover",
+    "category": "Microbial Composter"
+  },
+  {
+    "name": "Safe 3",
+    "technical": "Bacterial, fungal & viral controller",
+    "category": "Special Products"
+  },
+  {
+    "name": "Trisul",
+    "technical": "Plant growth enhancer",
+    "category": "Special Products"
+  },
+  {
+    "name": "Bio Cal",
+    "technical": "Calcium booster",
+    "category": "Special Products"
+  },
+  {
+    "name": "VAM",
+    "technical": "Vesicular arbuscular mycorrhiza",
+    "category": "Special Products"
+  },
+  {
+    "name": "Organic Bio Kit",
+    "technical": "12 products kit",
+    "category": "Special Products"
+  },
+  {
+    "name": "Kavash Kit",
+    "technical": "Curative preventive immune booster",
+    "category": "Special Products"
+  },
+  {
+    "name": "Suraksha +",
+    "technical": "G4 products",
+    "category": "Special Products"
+  },
+  {
+    "name": "Tricon & Tricon L",
+    "technical": "Triacontanol 0.1% EW & 0.5 GR",
+    "category": "Special Products"
+  },
+  {
+    "name": "Spinner",
+    "technical": "Spirulina 10% (Liquid)",
+    "category": "Special Products"
+  },
+  {
+    "name": "Agriya Special Kit",
+    "technical": "Azolin, Phospholin, Potashlin, Vamlin, Asperin, Sudolin, Nematolin, Tricholin, Actinolin",
+    "category": "Agriya Special Kit"
+  }
+]
