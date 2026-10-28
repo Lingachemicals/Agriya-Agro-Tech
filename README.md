@@ -32,7 +32,7 @@ Green crop photograph: raghul ayyasamy / Unsplash, https://unsplash.com/photos/a
 
 Visit `/admin` to add, edit or remove products. Product name, technical name, category, Short Description, Benefits, Mode of Action, Recommended Crops, Application, Potency, optional Dosage and search aliases are supported. Product images can be dragged into the editor or selected with Choose image; an HTTPS image URL is also supported. JPG, PNG and WebP files up to 10 MB are accepted by the browser, with larger files automatically resized to fit the 1 MB stored-image limit. Images persist in the product database and are served from /uploads/. Uploaded images are retained when detached so existing references do not break. Existing brochure text is preserved as a reference when editing legacy products. Removal asks for confirmation. The catalogue, category counts, public JSON and text product guide read the same D1 database; changes need no rebuild. The existing product-range PNG is a static brochure image and does not change.
 
-The admin API requires an `ADMIN_KEY` Worker secret of at least 32 characters. Use a password manager to generate a random access key. The panel keeps it only in tab memory and sends it in the Authorization header over HTTPS. Reloading or locking the panel clears access; no credential is shipped in source or stored in browser storage. Editing and deleting use revision checks so an old tab cannot silently overwrite newer changes.
+The admin panel uses email and password login. A private `ADMIN_LOGIN` Worker secret stores the email, random salt and PBKDF2-SHA256 password hash (100,000 iterations); the password is never committed. `ADMIN_KEY` is a private random session-signing secret. Successful login returns a signed session lasting up to eight hours, held only in tab memory. Reloading or signing out clears it. Login attempts are limited per IP and 15-minute window. Password configuration rotation invalidates prior sessions. Legacy bearer access keys are rejected whenever email/password login is configured.
 
 ### First-time setup
 
@@ -50,12 +50,12 @@ The admin API requires an `ADMIN_KEY` Worker secret of at least 32 characters. U
    ```
 
 4. Seed the 32 existing products once: `npx wrangler d1 migrations apply PRODUCTS_DB --remote`.
-5. Set your generated access key through the secure prompt: `npx wrangler secret put ADMIN_KEY`.
+5. Set a random signing secret with `npx wrangler secret put ADMIN_KEY`, and store the email, random 16-byte hex salt and password hash as the `ADMIN_LOGIN` JSON secret using the secure prompt. Generate the hash with the exported `passwordHash` function in `server/auth.mjs`; never commit a password.
 6. Run `npm test`, `npm run build`, `npx wrangler deploy --dry-run`, then `npx wrangler deploy`.
-7. Open `https://agriya-agro-tech.lingachem-agriya.workers.dev/admin` and enter the access key.
+7. Open `https://agriya-agro-tech.lingachem-agriya.workers.dev/admin` and sign in with your configured email and password.
 
 Until the database is bound, public pages continue using the original catalogue and admin writes return a setup error. After binding, storage failures return an error rather than resurrecting deleted products. Do not re-run the seed SQL manually after deleting products; Wrangler records applied migrations and will not repeat them.
 
 For local development, add a local-only `ADMIN_KEY` to the ignored `.dev.vars`, apply migrations with `npx wrangler d1 migrations apply PRODUCTS_DB --local`, and run `npx wrangler dev`. A plain Python static server previews only the original static assets; it does not run the admin API. Use `npm test` on Node 24+ for API and SQL integration tests.
 
-Back up products with `npx wrangler d1 export PRODUCTS_DB --remote --output products-backup.sql`. Rotate the access key using `npx wrangler secret put ADMIN_KEY`; existing unlocked tabs must enter the new key.
+Back up products with `npx wrangler d1 export PRODUCTS_DB --remote --output products-backup.sql`. Rotate the signing secret using `npx wrangler secret put ADMIN_KEY`; existing tabs must sign in again.

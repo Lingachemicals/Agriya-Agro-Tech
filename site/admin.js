@@ -9,7 +9,7 @@ async function api(path = '', options = {}) {
   if (!response.ok) throw new Error(data.error || 'Could not save. Please try again.');
   return data;
 }
-function lock() { key=''; products=[]; $('products').replaceChildren(); $('dashboard').hidden=true; $('logout').hidden=true; $('login').hidden=false; $('editor').close(); $('remove-dialog').close(); $('access-key').value=''; $('access-key').focus(); status('Panel locked.'); }
+function lock() { key=''; products=[]; $('products').replaceChildren(); $('dashboard').hidden=true; $('logout').hidden=true; $('login').hidden=false; $('editor').close(); $('remove-dialog').close(); $('login-password').value=''; $('login-email').focus(); status('Signed out.'); }
 function fillCategories() {
   for (const id of ['category','category-filter']) { const select=$(id); select.replaceChildren(); if (id==='category-filter') select.add(new Option('All categories','')); categories.forEach(c=>select.add(new Option(c,c))); }
 }
@@ -38,9 +38,13 @@ function openEditor(product=null) {
   $('editor').showModal(); $('name').focus();
 }
 $('login-form').onsubmit=async e=>{
-  e.preventDefault(); const button=e.submitter; button.disabled=true; key=$('access-key').value;
-  try { const data=await api(); products=data.products; categories=data.categories; fillCategories(); render(); $('access-key').value=''; $('login').hidden=true; $('dashboard').hidden=false; $('logout').hidden=false; status('Catalogue loaded.'); }
-  catch(error) { key='';status(error.message,true); } finally {button.disabled=false;}
+  e.preventDefault();const button=e.submitter;button.disabled=true;
+  try {
+    const response=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('login-email').value,password:$('login-password').value})});
+    const session=await response.json();if(!response.ok)throw new Error(session.error||'Could not sign in.');
+    key=session.token;$('login-password').value='';
+    const data=await api();products=data.products;categories=data.categories;fillCategories();render();$('login').hidden=true;$('dashboard').hidden=false;$('logout').hidden=false;status('Catalogue loaded.');
+  }catch(error){key='';status(error.message,true);}finally{button.disabled=false;}
 };
 $('logout').onclick=lock;
 $('search').oninput=render; $('category-filter').onchange=render;

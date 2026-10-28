@@ -4,12 +4,14 @@ import {DatabaseSync} from 'node:sqlite';
 import {readFileSync} from 'node:fs';
 import worker from '../worker.mjs';
 import {validateProduct} from '../server/catalogue.mjs';
+import {passwordHash} from '../server/auth.mjs';
 import {productSections} from '../server/sections.mjs';
 const seed=JSON.parse(readFileSync(new URL('../site/products.json',import.meta.url)));
 const key='test-only-random-length-admin-key-1234567890';
 function database() {
   const db=new DatabaseSync(':memory:'); db.exec(readFileSync(new URL('../migrations/0001_products.sql',import.meta.url),'utf8'));
   db.exec(readFileSync(new URL('../migrations/0002_product_images.sql',import.meta.url),'utf8'));
+  db.exec(readFileSync(new URL('../migrations/0003_admin_login.sql',import.meta.url),'utf8'));
   return {prepare(sql){const statement=db.prepare(sql);let args=[];const query={bind(...values){args=values.map(v=>v instanceof ArrayBuffer?new Uint8Array(v):v);return query;},async first(){return statement.get(...args)||null;},async all(){return {results:statement.all(...args)};},async run(){const result=statement.run(...args);return {meta:{changes:Number(result.changes)}};}};return query;},close:()=>db.close()};
 }
 function request(path,method='GET',body,token=key,origin) {return new Request('https://example.com'+path,{method,headers:{...(token?{Authorization:'Bearer '+token}:{}),'Content-Type':'application/json',...(origin?{Origin:origin}:{})},...(body===undefined?{}:{body:JSON.stringify(body)})});}
@@ -87,4 +89,20 @@ test('upload validated images, retrieve exact bytes, and attach to a product',as
   const saved=await worker.fetch(request('/api/admin/products','POST',{...product,image,sections:{shortDescription:'Short description',benefits:'Benefits'}}),env);assert.equal(saved.status,201);
   const html=await(await worker.fetch(request('/products'),env)).text();assert.ok(html.includes(image));
   assert.equal((await worker.fetch(request('/uploads/00000000-0000-0000-0000-000000000000.png'),env)).status,404);db.close();
+});
+
+test('email/password login issues signed expiring sessions, rejects old keys and throttles attempts',async()=>{
+  const db=database(),salt='0123456789abcdef0123456789abcdef';
+  const config={email:'admin@example.com',salt,hash:await passwordHash('test-password-only',salt)};
+  const env={PRODUCTS_DB:db,ADMIN_KEY:key,ADMIN_LOGIN:JSON.stringify(config)};
+  const wrong=await worker.fetch(request('/api/admin/login','POST',{email:'admin@example.com',password:'wrong'}),env);assert.equal(wrong.status,401);
+  assert.equal((await worker.fetch(request('/api/admin/products'),env)).status,401);
+  const response=await worker.fetch(request('/api/admin/login','POST',{email:'ADMIN@example.com',password:'test-password-only'}),env);assert.equal(response.status,200);
+  const {token}=await response.json();assert.ok(token.includes('.'));
+  assert.equal((await worker.fetch(request('/api/admin/products','GET',undefined,token),env)).status,200);
+  assert.equal((await worker.fetch(request('/api/admin/products','GET',undefined,token+'x'),env)).status,401);
+  const rotated={...env,ADMIN_LOGIN:JSON.stringify({...config,salt:'abcdef0123456789abcdef0123456789'})};
+  assert.equal((await worker.fetch(request('/api/admin/products','GET',undefined,token),rotated)).status,401);
+  for(let i=0;i<10;i++)assert.equal((await worker.fetch(request('/api/admin/login','POST',{email:'admin@example.com',password:'wrong'}),env)).status,401);
+  assert.equal((await worker.fetch(request('/api/admin/login','POST',{email:'admin@example.com',password:'test-password-only'}),env)).status,429);db.close();
 });

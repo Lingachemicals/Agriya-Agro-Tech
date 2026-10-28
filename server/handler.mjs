@@ -1,3 +1,4 @@
+import {login, verifySession} from './auth.mjs';
 import {categories, categorySlug, validateProduct, renderCatalogue, renderCounts} from './catalogue.mjs';
 const security = {'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY'};
 const json = (body, status = 200) => Response.json(body, {status, headers:{...security,'Cache-Control':'no-store'}});
@@ -5,6 +6,7 @@ async function authorized(request, env) {
   if (!env.ADMIN_KEY || env.ADMIN_KEY.length < 32) return false;
   const supplied = request.headers.get('Authorization') || '';
   if (!supplied.startsWith('Bearer ') || supplied.length <= 7 || supplied.length > 1024) return false;
+  if (env.ADMIN_LOGIN) return verifySession(supplied.slice(7),env);
   const encode = value => new TextEncoder().encode(value);
   const importKey = value => crypto.subtle.importKey('raw', encode(value), {name:'HMAC',hash:'SHA-256'}, false, ['sign','verify']);
   const [expectedKey, suppliedKey] = await Promise.all([importKey(env.ADMIN_KEY), importKey(supplied.slice(7))]);
@@ -25,9 +27,9 @@ async function readBytes(request, maximum) {
   const bytes = new Uint8Array(size); let offset = 0; for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
   return bytes;
 }
-async function bodyJSON(request) {
+async function bodyJSON(request, maximum = 180000) {
   if (!request.headers.get('Content-Type')?.startsWith('application/json')) throw new Error('Send JSON product details.');
-  const bytes = await readBytes(request,180000);
+  const bytes = await readBytes(request,maximum);
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { throw new Error('Invalid JSON product details.'); }
 }
 export function createHandler(files, seed) {
@@ -37,9 +39,14 @@ export function createHandler(files, seed) {
     try {
       if (path.startsWith('/api/admin/')) {
         if (!env.PRODUCTS_DB || !env.ADMIN_KEY || env.ADMIN_KEY.length < 32) return json({error:'Admin setup is incomplete. Configure the product database and admin access key.'},503);
-        if (!await authorized(request,env)) return json({error:'Invalid admin access key.'},401);
         const origin = request.headers.get('Origin');
         if (origin && origin !== url.origin) return json({error:'This origin is not allowed.'},403);
+        if (path === '/api/admin/login') {
+          if(request.method !== 'POST')return json({error:'Method not allowed.'},405);
+          let input;try{input=await bodyJSON(request,4096);}catch{return json({error:'Enter your email and password.'},400);}
+          const result=await login(request,env,input);return json(result.body,result.status);
+        }
+        if (!await authorized(request,env)) return json({error:env.ADMIN_LOGIN ? 'Please sign in again.' : 'Invalid admin access key.'},401);
         if (path === '/api/admin/images') {
           if (request.method !== 'POST') return json({error:'Method not allowed.'},405);
           let bytes; try { bytes = await readBytes(request,1000000); } catch(e) { return json({error:e.message},400); }
