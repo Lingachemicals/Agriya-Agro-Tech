@@ -49,7 +49,7 @@ export function createHandler(files, seed) {
         }
         if (slug && ['PUT','DELETE'].includes(request.method)) {
           let input; try { input = await bodyJSON(request); } catch(e) { return json({error:e.message},400); }
-          if (!Number.isSafeInteger(input.revision) || input.revision < 1) return json({error:'Reload the product before saving.'},400);
+          if (!input || typeof input !== 'object' || !Number.isSafeInteger(input.revision) || input.revision < 1) return json({error:'Reload the product before saving.'},400);
           let result;
           if (request.method === 'DELETE') result = await env.PRODUCTS_DB.prepare('DELETE FROM products WHERE slug = ? AND revision = ?').bind(slug,input.revision).run();
           else {

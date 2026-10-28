@@ -30,6 +30,7 @@ test('reject unauthorized writes, cross-origin writes, invalid payloads and unsu
   assert.equal((await worker.fetch(request('/api/admin/products','POST',{...product,category:'Invalid'}),env)).status,400);
   assert.equal((await worker.fetch(request('/api/admin/products','POST',{...product,image:'javascript:alert(1)'}),env)).status,400);
   assert.equal((await worker.fetch(request('/api/admin/products','PATCH',product),env)).status,405);
+  assert.equal((await worker.fetch(request('/api/admin/products/azolin-lf','PUT',null),env)).status,400);
   assert.equal((await worker.fetch(request('/api/admin/unknown'),env)).status,404);
   assert.throws(()=>validateProduct({...product,content:['x'.repeat(15001)]}));
   const oversized=new Request('https://example.com/api/admin/products',{method:'POST',headers:{Authorization:'Bearer '+key,'Content-Type':'application/json'},body:' '.repeat(180001)});
