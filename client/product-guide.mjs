@@ -77,8 +77,6 @@ export function createProductGuide(products, assets, onProgress = () => {}) {
     do {
       if (pageCount++) doc.addPage();
       doc.setFillColor(255,255,255); doc.rect(0,0,210,297,'F');
-      doc.setDrawColor(...accent); doc.setLineWidth(2.3); doc.roundedRect(6,6,198,284,7,7,'S');
-      doc.setLineWidth(.45); doc.roundedRect(9,9,192,278,5,5,'S');
       // Crop photograph and bright title panel echo the supplied product leaflet.
       if (assets.field) {
         doc.saveGraphicsState(); doc.rect(10,10,190,34,null); doc.clip(); doc.discardPath();
