@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS product_images (
+  id TEXT PRIMARY KEY,
+  mime TEXT NOT NULL,
+  data BLOB NOT NULL
+);

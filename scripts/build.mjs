@@ -1,7 +1,7 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 const types={'/':'text/html; charset=utf-8','/assets/style.css':'text/css; charset=utf-8','/assets/bootstrap.min.css':'text/css; charset=utf-8','/assets/bootstrap.bundle.min.js':'text/javascript; charset=utf-8','/site/agriya-theme.css':'text/css; charset=utf-8','/site/agriya-logo.png':'image/png','/site/agriya-loading.gif':'image/gif','/site/app.js':'text/javascript; charset=utf-8','/site/products.json':'application/json; charset=utf-8','/site/product-guide.txt':'text/plain; charset=utf-8','/site/leaf.svg':'image/svg+xml','/site/field.jpg':'image/jpeg','/site/product-range.png':'image/png'};
-Object.assign(types, {'/admin':'text/html; charset=utf-8','/admin/app.js':'text/javascript; charset=utf-8','/admin/style.css':'text/css; charset=utf-8'});
-const adminPaths={'/admin':'site/admin.html','/admin/app.js':'site/admin.js','/admin/style.css':'site/admin.css'};
+Object.assign(types, {'/admin':'text/html; charset=utf-8','/admin/app.js':'text/javascript; charset=utf-8','/admin/style.css':'text/css; charset=utf-8','/admin/sections.js':'text/javascript; charset=utf-8'});
+const adminPaths={'/admin':'site/admin.html','/admin/app.js':'site/admin.js','/admin/style.css':'site/admin.css','/admin/sections.js':'server/sections.mjs'};
 const files={};for(const [url,type] of Object.entries(types)){const path=adminPaths[url]||(url==='/'?'index.html':url.slice(1));files[url]={type,data:readFileSync(path).toString('base64')};}
 const home=readFileSync('index.html','utf8');
 const catalogue=readFileSync('site/catalogue.html','utf8');

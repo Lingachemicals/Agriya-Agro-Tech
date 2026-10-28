@@ -18,12 +18,16 @@ async function list(env, seed) {
   const {results} = await env.PRODUCTS_DB.prepare('SELECT data, revision FROM products ORDER BY sort_order, slug').all();
   return results.map(row => ({...JSON.parse(row.data), revision:row.revision}));
 }
+async function readBytes(request, maximum) {
+  const reader = request.body?.getReader(); if (!reader) throw new Error('Missing file or product details.');
+  const chunks = []; let size = 0;
+  while (true) { const {done,value} = await reader.read(); if (done) break; size += value.byteLength; if (size > maximum) { await reader.cancel(); throw new Error(maximum === 1000000 ? 'Upload is too large. Use an image under 1 MB.' : 'Product details are too large.'); } chunks.push(value); }
+  const bytes = new Uint8Array(size); let offset = 0; for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
+  return bytes;
+}
 async function bodyJSON(request) {
   if (!request.headers.get('Content-Type')?.startsWith('application/json')) throw new Error('Send JSON product details.');
-  const reader = request.body?.getReader(); if (!reader) throw new Error('Missing product details.');
-  const chunks = []; let size = 0;
-  while (true) { const {done,value} = await reader.read(); if (done) break; size += value.byteLength; if (size > 180000) { await reader.cancel(); throw new Error('Product details are too large.'); } chunks.push(value); }
-  const bytes = new Uint8Array(size); let offset = 0; for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
+  const bytes = await readBytes(request,180000);
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { throw new Error('Invalid JSON product details.'); }
 }
 export function createHandler(files, seed) {
@@ -36,6 +40,19 @@ export function createHandler(files, seed) {
         if (!await authorized(request,env)) return json({error:'Invalid admin access key.'},401);
         const origin = request.headers.get('Origin');
         if (origin && origin !== url.origin) return json({error:'This origin is not allowed.'},403);
+        if (path === '/api/admin/images') {
+          if (request.method !== 'POST') return json({error:'Method not allowed.'},405);
+          let bytes; try { bytes = await readBytes(request,1000000); } catch(e) { return json({error:e.message},400); }
+          const mime = request.headers.get('Content-Type')?.split(';')[0];
+          const png = bytes.length >= 24 && [137,80,78,71,13,10,26,10].every((v,i) => bytes[i] === v);
+          const jpg = bytes.length >= 4 && bytes[0] === 255 && bytes[1] === 216 && bytes[2] === 255;
+          const webp = bytes.length >= 16 && new TextDecoder().decode(bytes.slice(0,4)) === 'RIFF' && new TextDecoder().decode(bytes.slice(8,12)) === 'WEBP';
+          const extension = mime === 'image/png' && png ? 'png' : mime === 'image/jpeg' && jpg ? 'jpg' : mime === 'image/webp' && webp ? 'webp' : null;
+          if (!extension) return json({error:'Upload a valid JPG, PNG or WebP image.'},400);
+          const id = crypto.randomUUID()+'.'+extension;
+          await env.PRODUCTS_DB.prepare('INSERT INTO product_images (id, mime, data) VALUES (?, ?, ?)').bind(id,mime,bytes.buffer).run();
+          return json({image:'/uploads/'+id},201);
+        }
         const match = path.match(/^\/api\/admin\/products(?:\/([a-z0-9-]+))?$/);
         if (!match) return json({error:'Not found.'},404);
         const slug = match[1];
@@ -54,6 +71,8 @@ export function createHandler(files, seed) {
           if (request.method === 'DELETE') result = await env.PRODUCTS_DB.prepare('DELETE FROM products WHERE slug = ? AND revision = ?').bind(slug,input.revision).run();
           else {
             let product; try { product = {...validateProduct(input),slug}; } catch(e) { return json({error:e.message},400); }
+            const previous = await env.PRODUCTS_DB.prepare('SELECT data FROM products WHERE slug = ? AND revision = ?').bind(slug,input.revision).first();
+            if (previous) { const old = JSON.parse(previous.data); if (old.sourceContent || !old.sections) product.sourceContent = old.sourceContent || old.content; }
             result = await env.PRODUCTS_DB.prepare('UPDATE products SET data = ?, revision = revision + 1 WHERE slug = ? AND revision = ?').bind(JSON.stringify(product),slug,input.revision).run();
           }
           if (!result.meta.changes) return json({error:'This product changed or was removed. Refresh and try again.'},409);
@@ -62,6 +81,13 @@ export function createHandler(files, seed) {
         return json({error:'Method not allowed.'},405);
       }
       if (!['GET','HEAD'].includes(request.method)) return new Response('Method not allowed',{status:405,headers:{...security,Allow:'GET, HEAD'}});
+      if (/^\/uploads\/[a-f0-9-]{36}\.(jpg|png|webp)$/.test(path)) {
+        if (!env.PRODUCTS_DB) return new Response('Image not found.',{status:404,headers:security});
+        const row = await env.PRODUCTS_DB.prepare('SELECT mime, data FROM product_images WHERE id = ?').bind(path.slice('/uploads/'.length)).first();
+        if (!row) return new Response('Image not found.',{status:404,headers:security});
+        const bytes = row.data instanceof ArrayBuffer ? row.data : new Uint8Array(row.data);
+        return new Response(request.method === 'HEAD' ? null : bytes,{headers:{...security,'Content-Type':row.mime,'Cache-Control':'public, max-age=31536000, immutable','Content-Disposition':'inline'}});
+      }
       let file = files[path];
       if (path === '/robots.txt') return new Response('User-agent: *\nAllow: /\nDisallow: /admin',{headers:{...security,'Content-Type':'text/plain'}});
       if (path === '/index.html' || path === '/theme2' || path.startsWith('/theme2/') || path.startsWith('/document/') || (/^\/[^/]+\.html$/.test(path))) return Response.redirect(url.origin+'/',302);
@@ -77,7 +103,7 @@ export function createHandler(files, seed) {
         if (path.startsWith('/products')) { const category = path === '/products' ? 'All' : categories.find(c => categorySlug(c) === path.split('/')[2]); content = renderCatalogue(content,products,category); }
       }
       const headers = {...security,'Content-Type':file.type,'Cache-Control':file.type.startsWith('text/html') ? 'no-store':'public, max-age=3600'};
-      if (path.startsWith('/admin')) { headers['X-Robots-Tag']='noindex, nofollow'; headers['Content-Security-Policy']="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"; }
+      if (path.startsWith('/admin')) { headers['X-Robots-Tag']='noindex, nofollow'; headers['Content-Security-Policy']="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: blob:; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'"; }
       return new Response(request.method === 'HEAD' ? null : content ?? Uint8Array.from(atob(file.data),c => c.charCodeAt(0)),{headers});
     } catch (error) { console.error(JSON.stringify({event:'catalogue_error',message:error.message})); return json({error:'Product storage is unavailable. Please try again shortly.'},503); }
   }};
