@@ -59,3 +59,9 @@ Until the database is bound, public pages continue using the original catalogue 
 For local development, add a local-only `ADMIN_KEY` to the ignored `.dev.vars`, apply migrations with `npx wrangler d1 migrations apply PRODUCTS_DB --local`, and run `npx wrangler dev`. A plain Python static server previews only the original static assets; it does not run the admin API. Use `npm test` on Node 24+ for API and SQL integration tests.
 
 Back up products with `npx wrangler d1 export PRODUCTS_DB --remote --output products-backup.sql`. Rotate the signing secret using `npx wrangler secret put ADMIN_KEY`; existing tabs must sign in again.
+
+## PDF product guide
+
+Both public catalogue download controls generate an A4 PDF in the browser using the latest `/api/products` data. Each product starts its own page, with a field header, uploaded product photo, a border and footer tinted from the photo, and the existing product sections. Products without photos use the company logo. Unusually long descriptions continue on an additional page rather than losing text. Failed photo downloads are reported after the PDF is saved. No product data is sent to a third-party PDF service.
+
+`client/product-guide.mjs` contains the PDF layout and download flow. `npm run build` bundles jsPDF into a self-hosted asset and embeds it and the subset DejaVu font into the Worker. The font licence is in `site/guide/font-license.txt`. The existing text guide endpoint remains available for older links.

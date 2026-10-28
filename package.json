@@ -9,6 +9,10 @@
     "pretest": "npm run build"
   },
   "devDependencies": {
+    "esbuild": "0.28.2",
     "wrangler": "^4.154.0"
+  },
+  "dependencies": {
+    "jspdf": "4.2.1"
   }
 }

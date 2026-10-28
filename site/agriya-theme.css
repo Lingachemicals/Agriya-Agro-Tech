@@ -10,3 +10,7 @@ html{scroll-padding-top:100px}.company-logo{width:62px;height:62px;object-fit:co
 /* Keep uploaded product photos large, proportional and fully visible. */
 .product-image{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;margin-top:16px;border-radius:12px;background:#f8faf9}
 .product-detail-image{display:block;width:100%;height:auto;max-height:60vh;object-fit:contain;margin:24px auto;border-radius:14px;background:#f8faf9}
+
+[data-download-guide][aria-busy="true"]{opacity:.6;cursor:progress}#guide-status{font-size:13px;color:#0f7a37;overflow-wrap:anywhere}#guide-status:empty{display:none}
+
+.guide-download{border:0;background:none;cursor:pointer;text-align:left;padding:0}#product-dialog .guide-download{background:#16a34a}#guide-dialog-status{font-size:13px;margin-top:12px;color:#0f7a37}
