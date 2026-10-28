@@ -4,3 +4,43 @@ const search=document.querySelector('#search');const filters=[...document.queryS
 }
 document.querySelector('#year').textContent=new Date().getFullYear();
 const topButton=document.querySelector('#scrollTop');function updateTop(){topButton.classList.toggle('show',scrollY>400);}window.addEventListener('scroll',updateTop,{passive:true});updateTop();function toTop(){window.scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}topButton.addEventListener('click',toTop);topButton.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toTop();}});document.querySelector('#contactForm')?.addEventListener('submit',e=>{e.preventDefault();const subject=document.querySelector('#cf-subject').value||'Agriya Agro Tech Product Enquiry';const body=['Name: '+document.querySelector('#cf-name').value,'Email: '+document.querySelector('#cf-email').value,'Message: '+document.querySelector('#cf-message').value].join('\n');window.location.href='mailto:agriyaagrotech@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);document.querySelector('#formStatus').textContent='Your email app will open with the enquiry. Review it and send it there.';});
+// Animate once on entry; content remains visible if animation APIs are unavailable.
+const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
+const runningMotion=new Set();
+function playEntrance(element,delay=0){
+  if(motionPreference.matches || !element.animate)return;
+  const animation=element.animate([{opacity:0,transform:'translateY(22px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,delay,easing:'cubic-bezier(.2,.7,.2,1)',fill:'backwards'});
+  runningMotion.add(animation);animation.finished.catch(()=>{}).finally(()=>runningMotion.delete(animation));
+}
+function animateCount(element){
+  const target=Number(element.dataset.target);
+  if(!Number.isFinite(target))return;
+  element.setAttribute('aria-label',String(target));
+  if(motionPreference.matches){element.textContent=target;return;}
+  const start=performance.now();
+  function frame(now){
+    const progress=motionPreference.matches ? 1 : Math.min(1,(now-start)/1400);
+    element.textContent=Math.round(target*(1-Math.pow(1-progress,3)));
+    if(progress<1)requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+}
+const revealSelector='.section-title,.section-sub,.eyebrow,.cause-card,.why-card,.hiw-step,.vol-card,.testi-card,.cta-banner,.contact-card,.about-collage,.product,.catalogue-tools,.filters,.footer-top > .row > div,.stat-item';
+function initSiteMotion(){
+  if(!('IntersectionObserver' in window))return;
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      observer.unobserve(entry.target);
+      if(entry.target.matches('.counter'))animateCount(entry.target);
+      else playEntrance(entry.target,Number(entry.target.dataset.aosDelay||0)%300);
+    });
+  },{threshold:.08});
+  document.querySelectorAll(revealSelector+',.counter').forEach(element=>{
+    // Avoid stacking transforms on nested reveal containers.
+    if(element.matches('.counter') || !element.parentElement.closest(revealSelector))observer.observe(element);
+  });
+  document.querySelectorAll('.hero .eyebrow,.hero-title,.hero-lead,.hero-media').forEach((el,i)=>playEntrance(el,i*100));
+}
+if(dismissed)initSiteMotion();else window.addEventListener('load',()=>setTimeout(initSiteMotion,1150),{once:true});
+motionPreference.addEventListener('change',event=>{if(event.matches){runningMotion.forEach(animation=>animation.cancel());document.querySelectorAll('.counter').forEach(el=>el.textContent=el.dataset.target);}});
