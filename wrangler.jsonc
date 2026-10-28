@@ -5,5 +5,17 @@
   "workers_dev": true,
   "observability": {
     "enabled": true
-  }
+  },
+  "build": {
+    "command": "npm run build"
+  },
+  "d1_databases": [
+    {
+      "binding": "PRODUCTS_DB",
+      "database_name": "agriya-products",
+      "database_id": "bfeb4b04-7687-492e-bdd1-1f36b9afab91",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "previews": {}
 }

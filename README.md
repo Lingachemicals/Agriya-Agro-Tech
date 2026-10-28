@@ -12,7 +12,7 @@ Run `python3 -m http.server 8080` from this directory.
 
 ## Build and deploy
 
-Run `node scripts/build.mjs` to generate `worker.mjs`, then deploy with `npx wrangler deploy`. The build packages the HTML, CSS, JavaScript, product data and supplied index in the Worker. The site uses no external runtime dependencies.
+Run `node scripts/build.mjs` to generate `worker.mjs`, then deploy with `npx wrangler deploy`. The Wrangler build hook regenerates the Worker automatically on every deploy. The build packages the HTML, CSS, JavaScript, product data and supplied index in the Worker. The site uses no external runtime dependencies.
 
 The old charity template pages redirect to the agriculture website.
 
@@ -27,3 +27,35 @@ The original Hopewell layout and stylesheet are retained with Agriya-specific co
 Company profile, vision, policies, contact details and complete product descriptions are sourced from the supplied 25-page English brochure. The source layout and logo loader are retained. Product detail content is rendered as HTML text, not embedded PDF pages or brochure images. Glucon, Methelo, Asperlin and Beauverilin use detailed-page names with index names retained as search aliases. Brochure potency and dosage are transcribed without silently changing ambiguous source values. The contact form opens an email draft to the brochure email address; it does not automatically send.
 
 Green crop photograph: raghul ayyasamy / Unsplash, https://unsplash.com/photos/a-large-green-field-AiyBnqG2DCQ. Hero and crop imagery use this lush green paddy photograph.
+
+## Product administration
+
+Visit `/admin` to add, edit or remove products. Product name, technical description, category, full description, search aliases and an optional public HTTPS image URL are supported. Removal asks for confirmation. The catalogue, category counts, public JSON and text product guide read the same D1 database; changes need no rebuild. The existing product-range PNG is a static brochure image and does not change.
+
+The admin API requires an `ADMIN_KEY` Worker secret of at least 32 characters. Use a password manager to generate a random access key. The panel keeps it only in tab memory and sends it in the Authorization header over HTTPS. Reloading or locking the panel clears access; no credential is shipped in source or stored in browser storage. Editing and deleting use revision checks so an old tab cannot silently overwrite newer changes.
+
+### First-time setup
+
+1. Install Wrangler: `npm install --save-dev wrangler@latest`.
+2. Create a D1 database: `npx wrangler d1 create agriya-products`.
+3. Add the returned database ID to `wrangler.jsonc` with this binding:
+
+   ```json
+   "d1_databases": [{
+     "binding": "PRODUCTS_DB",
+     "database_name": "agriya-products",
+     "database_id": "REPLACE_WITH_RETURNED_DATABASE_ID",
+     "migrations_dir": "migrations"
+   }]
+   ```
+
+4. Seed the 32 existing products once: `npx wrangler d1 migrations apply PRODUCTS_DB --remote`.
+5. Set your generated access key through the secure prompt: `npx wrangler secret put ADMIN_KEY`.
+6. Run `npm test`, `npm run build`, `npx wrangler deploy --dry-run`, then `npx wrangler deploy`.
+7. Open `https://agriya-agro-tech.lingachem-agriya.workers.dev/admin` and enter the access key.
+
+Until the database is bound, public pages continue using the original catalogue and admin writes return a setup error. After binding, storage failures return an error rather than resurrecting deleted products. Do not re-run the seed SQL manually after deleting products; Wrangler records applied migrations and will not repeat them.
+
+For local development, add a local-only `ADMIN_KEY` to the ignored `.dev.vars`, apply migrations with `npx wrangler d1 migrations apply PRODUCTS_DB --local`, and run `npx wrangler dev`. A plain Python static server previews only the original static assets; it does not run the admin API. Use `npm test` on Node 24+ for API and SQL integration tests.
+
+Back up products with `npx wrangler d1 export PRODUCTS_DB --remote --output products-backup.sql`. Rotate the access key using `npx wrangler secret put ADMIN_KEY`; existing unlocked tabs must enter the new key.
