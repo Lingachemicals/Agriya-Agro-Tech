@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {createProductGuide,imageAccent} from '../client/product-guide.mjs';
+import {createProductGuide,imageAccent,selectGuideProducts,guideFilename} from '../client/product-guide.mjs';
 import worker from '../worker.mjs';
 const font=readFileSync(new URL('../site/guide/font.ttf',import.meta.url)).toString('base64');
 const products=JSON.parse(readFileSync(new URL('../site/products.json',import.meta.url)));
@@ -30,4 +30,21 @@ test('both catalogue download controls use the PDF bundle and expose progress',a
   for(const path of ['/site/guide/product-guide.js','/site/guide/font.ttf']){
     const response=await worker.fetch(new Request('https://example.com'+path));assert.equal(response.status,200);
   }
+});
+
+
+test('PDF selection follows product, category and all-products context',()=>{
+  const other={...products[0],slug:'same-name-different-product',category:'Special Products'};
+  const catalogue=[...products,other];
+  const single=selectGuideProducts(catalogue,{slug:'azolin-lf'});
+  assert.equal(single.length,1);assert.equal(single[0].slug,'azolin-lf');
+  assert.equal(guideFilename({slug:'azolin-lf'},single),'Agriya-Azolin-LF.pdf');
+  const fertilizers=selectGuideProducts(catalogue,{category:'Bio Fertilizers'});
+  assert.equal(fertilizers.length,12);assert.ok(fertilizers.every(p=>p.category==='Bio Fertilizers'));
+  assert.equal(guideFilename({category:'Bio Fertilizers'},fertilizers),'Agriya-Bio-Fertilizers.pdf');
+  assert.equal(selectGuideProducts(catalogue,{category:'All'}).length,catalogue.length);
+  assert.equal(guideFilename({category:'All'},catalogue),'Agriya-Product-Guide.pdf');
+  assert.deepEqual(selectGuideProducts(catalogue,{slug:'deleted-product'}),[]);
+  assert.deepEqual(selectGuideProducts(catalogue,{slug:''}),[]);
+  assert.deepEqual(selectGuideProducts(catalogue,{category:'Removed Category'}),[]);
 });

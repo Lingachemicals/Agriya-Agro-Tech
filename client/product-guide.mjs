@@ -146,19 +146,34 @@ export async function loadGuideImage(url, alias) {
   } finally {bitmap.close();}
 }
 
+export function selectGuideProducts(products, scope = {}) {
+  if (scope.slug !== undefined) return products.filter(p => p.slug === scope.slug);
+  if (scope.category && scope.category !== 'All') return products.filter(p => p.category === scope.category);
+  return products;
+}
+
+export function guideFilename(scope, products) {
+  const label=scope.slug !== undefined ? products[0]?.name : scope.category && scope.category !== 'All' ? scope.category : 'Product Guide';
+  const name=String(label || 'Product').replace(/[^a-z0-9]+/gi,'-').replace(/^-|-$/g,'');
+  return 'Agriya-'+name+'.pdf';
+}
+
 export async function downloadProductGuide(button) {
-  const label=button.textContent; const buttons=[...document.querySelectorAll('[data-download-guide]')];
+  const buttons=[...document.querySelectorAll('[data-download-guide]')];
   if(buttons.some(b=>b.getAttribute('aria-busy')==='true')) return;
   const status=button.closest('dialog')?.querySelector('#guide-dialog-status') || document.querySelector('#guide-status');
   buttons.forEach(b=>{b.setAttribute('aria-busy','true');b.setAttribute('aria-disabled','true');});
+  const dialog=button.closest('dialog');
+  const scope=dialog ? {slug:dialog.dataset.productSlug || ''} : {category:document.querySelector('#products')?.dataset.category || 'All'};
   let missing=[];
   try {
     status.textContent='Preparing your PDF product guide…';
-    const [products,font,logo,field]=await Promise.all([
+    const [catalogue,font,logo,field]=await Promise.all([
       checkedFetch('/api/products'), checkedFetch('/site/guide/font.ttf','arrayBuffer'),
       loadGuideImage('/site/agriya-logo.png','agriya-logo'),loadGuideImage('/site/field.jpg','agriya-field')
     ]);
-    if(!products.length) throw new Error('No products are available to download yet.');
+    const products=selectGuideProducts(catalogue,scope);
+    if(!products.length) throw new Error('No products are available for this download. Refresh the page and try again.');
     // Limit parallel image downloads to keep memory use modest on mobile devices.
     const photos={}; let next=0,loaded=0;
     await Promise.all(Array.from({length:3},async()=>{
@@ -167,10 +182,10 @@ export async function downloadProductGuide(button) {
     }));
     let binary=''; for(const byte of new Uint8Array(font)) binary+=String.fromCharCode(byte);
     const pdf=createProductGuide(products,{font:btoa(binary),logo,field,photos});
-    await pdf.save('Agriya-Product-Guide.pdf',{returnPromise:true});
+    await pdf.save(guideFilename(scope,products),{returnPromise:true});
     status.textContent='PDF product guide downloaded.'+(missing.length ? ' Some photos could not be included: '+missing.join(', ')+'. Upload these photos in the admin panel and download again.' : '');
   } catch(error) {status.textContent=error.message || 'The PDF could not be downloaded. Please try again.';}
-  finally {buttons.forEach(b=>{b.removeAttribute('aria-busy');b.removeAttribute('aria-disabled');});button.textContent=label;}
+  finally {buttons.forEach(b=>{b.removeAttribute('aria-busy');b.removeAttribute('aria-disabled');});}
 }
 
 if(typeof document!=='undefined') document.addEventListener('click',event=>{
