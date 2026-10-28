@@ -4,3 +4,5 @@ html{scroll-padding-top:100px}.company-logo{width:62px;height:62px;object-fit:co
 .brochure-copy{white-space:normal}.brochure-copy h4{font-size:15px;color:#0f7a37;font-weight:700;margin:24px 0 12px}.brochure-copy h4:first-child{margin-top:0}.brochure-copy p{font-size:14px;margin:0 0 12px;line-height:1.75}.brochure-copy .brochure-measure{padding:9px 12px;background:#edf7ee;border-radius:8px}.brochure-bullet{padding-left:10px}
 
 .agriya-catalogue[hidden]{display:none!important}
+
+.product-page{padding-top:150px;min-height:65vh}.product-page .section-heading{margin-top:24px}
