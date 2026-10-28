@@ -18,7 +18,7 @@ for(const category of ['All',...categories]){
   if(category!=='All')content=content.replace('Download Product Guide (PDF)', 'Download '+category+' Guide (PDF)');
   if(category!=='All')content=content.replace(/<article class="product"[\s\S]*?<\/article>/g,card=>card.includes('data-category="'+category+'"')?card:'');
   let page=header+content+footer;
-  page=page.replace('</body>','<script type="module" src="/site/guide/product-guide.js?v=2"></script></body>');
+  page=page.replace('</body>','<script type="module" src="/site/guide/product-guide.js?v=3-borderless"></script></body>');
   page=page.replace(/href="#(?!products)([^"]+)"/g,'href="/#$1"');
   page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+(category==='All'?'Products':category)+' | Agriya Agro Tech</title>');
   files[path]={type:'text/html; charset=utf-8',data:Buffer.from(page).toString('base64')};
