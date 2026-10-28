@@ -9,7 +9,7 @@ async function api(path = '', options = {}) {
   if (!response.ok) throw new Error(data.error || 'Could not save. Please try again.');
   return data;
 }
-function lock() { key=''; products=[]; $('products').replaceChildren(); $('dashboard').hidden=true; $('logout').hidden=true; $('login').hidden=false; $('editor').close(); $('remove-dialog').close(); $('login-password').value=''; $('login-email').focus(); status('Signed out.'); }
+function lock() { hidePassword(); key=''; products=[]; $('products').replaceChildren(); $('dashboard').hidden=true; $('logout').hidden=true; $('login').hidden=false; $('editor').close(); $('remove-dialog').close(); $('login-password').value=''; $('login-email').focus(); status('Signed out.'); }
 function fillCategories() {
   for (const id of ['category','category-filter']) { const select=$(id); select.replaceChildren(); if (id==='category-filter') select.add(new Option('All categories','')); categories.forEach(c=>select.add(new Option(c,c))); }
 }
@@ -42,7 +42,7 @@ $('login-form').onsubmit=async e=>{
   try {
     const response=await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('login-email').value,password:$('login-password').value})});
     const session=await response.json();if(!response.ok)throw new Error(session.error||'Could not sign in.');
-    key=session.token;$('login-password').value='';
+    key=session.token;$('login-password').value='';hidePassword();
     const data=await api();products=data.products;categories=data.categories;fillCategories();render();$('login').hidden=true;$('dashboard').hidden=false;$('logout').hidden=false;status('Catalogue loaded.');
   }catch(error){key='';status(error.message,true);}finally{button.disabled=false;}
 };
@@ -103,3 +103,20 @@ $('image-file').onchange=e=>uploadImage(e.target.files[0]);
 for(const type of ['dragenter','dragover'])$('drop-zone').addEventListener(type,e=>{e.preventDefault();$('drop-zone').classList.add('drag-over');});
 for(const type of ['dragleave','drop'])$('drop-zone').addEventListener(type,e=>{e.preventDefault();$('drop-zone').classList.remove('drag-over');});
 $('drop-zone').addEventListener('drop',e=>{if(e.dataTransfer.files.length!==1){$('upload-status').textContent='Choose one product image at a time.';return;}uploadImage(e.dataTransfer.files[0]);});
+
+function hidePassword() {
+  $('login-password').type='password';
+  $('toggle-password').setAttribute('aria-label','Show password');
+  $('toggle-password').setAttribute('aria-pressed','false');
+  $('toggle-password').title='Show password';
+  $('eye-slash').setAttribute('hidden','');
+}
+$('toggle-password').onclick=()=>{
+  const show=$('login-password').type==='password';
+  if(!show){hidePassword();return;}
+  $('login-password').type='text';
+  $('toggle-password').setAttribute('aria-label','Hide password');
+  $('toggle-password').setAttribute('aria-pressed','true');
+  $('toggle-password').title='Hide password';
+  $('eye-slash').removeAttribute('hidden');
+};
