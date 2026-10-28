@@ -6,3 +6,7 @@ html{scroll-padding-top:100px}.company-logo{width:62px;height:62px;object-fit:co
 .agriya-catalogue[hidden]{display:none!important}
 
 .product-page{padding-top:150px;min-height:65vh}.product-page .section-heading{margin-top:24px}
+
+/* Keep uploaded product photos large, proportional and fully visible. */
+.product-image{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;margin-top:16px;border-radius:12px;background:#f8faf9}
+.product-detail-image{display:block;width:100%;height:auto;max-height:60vh;object-fit:contain;margin:24px auto;border-radius:14px;background:#f8faf9}
