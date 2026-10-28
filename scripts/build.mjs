@@ -1,6 +1,8 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 const types={'/':'text/html; charset=utf-8','/assets/style.css':'text/css; charset=utf-8','/assets/bootstrap.min.css':'text/css; charset=utf-8','/assets/bootstrap.bundle.min.js':'text/javascript; charset=utf-8','/site/agriya-theme.css':'text/css; charset=utf-8','/site/agriya-logo.png':'image/png','/site/agriya-loading.gif':'image/gif','/site/app.js':'text/javascript; charset=utf-8','/site/products.json':'application/json; charset=utf-8','/site/product-guide.txt':'text/plain; charset=utf-8','/site/leaf.svg':'image/svg+xml','/site/field.jpg':'image/jpeg','/site/product-range.png':'image/png'};
-const files={};for(const [url,type] of Object.entries(types)){const path=url==='/'?'index.html':url.slice(1);files[url]={type,data:readFileSync(path).toString('base64')};}
+Object.assign(types, {'/admin':'text/html; charset=utf-8','/admin/app.js':'text/javascript; charset=utf-8','/admin/style.css':'text/css; charset=utf-8'});
+const adminPaths={'/admin':'site/admin.html','/admin/app.js':'site/admin.js','/admin/style.css':'site/admin.css'};
+const files={};for(const [url,type] of Object.entries(types)){const path=adminPaths[url]||(url==='/'?'index.html':url.slice(1));files[url]={type,data:readFileSync(path).toString('base64')};}
 const home=readFileSync('index.html','utf8');
 const catalogue=readFileSync('site/catalogue.html','utf8');
 const categories=['Bio Fertilizers','Bio Control Agents','Bio Pesticides','Microbial Composter','Special Products','Agriya Special Kit'];
@@ -16,6 +18,8 @@ for(const category of ['All',...categories]){
   page=page.replace(/<title>[\s\S]*?<\/title>/,'<title>'+(category==='All'?'Products':category)+' | Agriya Agro Tech</title>');
   files[path]={type:'text/html; charset=utf-8',data:Buffer.from(page).toString('base64')};
 }
-const source=`const files=${JSON.stringify(files)};
-export default {fetch(request){const url=new URL(request.url);const path=url.pathname.replace(/\\/$/,'')||'/';const headers={'X-Content-Type-Options':'nosniff','Referrer-Policy':'strict-origin-when-cross-origin','X-Frame-Options':'DENY'};if(!['GET','HEAD'].includes(request.method))return new Response('Method not allowed',{status:405,headers:{...headers,Allow:'GET, HEAD'}});if(path==='/robots.txt')return new Response('User-agent: *\\nAllow: /',{headers:{...headers,'Content-Type':'text/plain'}});if(path==='/index.html'||path==='/theme2'||path.startsWith('/theme2/')||path.startsWith('/document/')||(/^\\/[^/]+\\.html$/.test(path)&&path!=='/index.html'))return new Response(null,{status:302,headers:{...headers,Location:'/'}});const file=files[path];if(!file)return new Response('Page not found. Visit Agriya Agro Tech at /.',{status:404,headers});const bytes=Uint8Array.from(atob(file.data),c=>c.charCodeAt(0));return new Response(request.method==='HEAD'?null:bytes,{headers:{...headers,'Content-Type':file.type,'Cache-Control':file.type.startsWith('text/html')?'no-cache':'public, max-age=3600'}});}};
+const source=`import {createHandler} from './server/handler.mjs';
+const files=${JSON.stringify(files)};
+const seed=${readFileSync('site/products.json','utf8')};
+export default createHandler(files,seed);
 `;writeFileSync('worker.mjs',source);console.log('Built Worker with '+Object.keys(files).length+' routes');
