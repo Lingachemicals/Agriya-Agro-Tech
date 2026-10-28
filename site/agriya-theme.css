@@ -14,3 +14,22 @@ html{scroll-padding-top:100px}.company-logo{width:62px;height:62px;object-fit:co
 [data-download-guide][aria-busy="true"]{opacity:.6;cursor:progress}#guide-status{font-size:13px;color:#0f7a37;overflow-wrap:anywhere}#guide-status:empty{display:none}
 
 .guide-download{border:0;background:none;cursor:pointer;text-align:left;padding:0}#product-dialog .guide-download{background:#16a34a}#guide-dialog-status{font-size:13px;margin-top:12px;color:#0f7a37}
+
+/* Responsive interaction motion across the public website. */
+@media(prefers-reduced-motion:no-preference){
+  .product,.why-card,.hiw-step,.contact-card,.filter,.product-button,.guide-download,.btn-hw-primary,.btn-hw-outline,.btn-cta{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+  .product-image,.product-detail-image{transition:transform .4s ease}
+  #product-dialog[open]{animation:agriya-dialog-in .25s ease-out}
+  #product-dialog[open]::backdrop{animation:agriya-backdrop-in .25s ease-out}
+  .stat-num{font-variant-numeric:tabular-nums}
+  @media(hover:hover){
+    .product:hover,.why-card:hover{transform:translateY(-6px);box-shadow:0 14px 32px #0f7a3718}
+    .hiw-step:hover{transform:translateY(-4px)}
+    .product:hover .product-image{transform:scale(1.025)}
+    .btn-hw-primary:hover,.btn-hw-outline:hover,.btn-cta:hover,.product-button:hover,.filter:hover{transform:translateY(-2px)}
+    .footer-link:hover{transform:translateX(3px)}
+  }
+  .btn-hw-primary:active,.product-button:active,.filter:active{transform:scale(.98)}
+}
+@keyframes agriya-dialog-in{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes agriya-backdrop-in{from{opacity:0}to{opacity:1}}
